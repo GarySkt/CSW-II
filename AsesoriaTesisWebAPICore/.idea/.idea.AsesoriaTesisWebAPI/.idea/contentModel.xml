@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2019.2/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.2/system/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_AsesoriaTesisWebAPI.1292592750.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="AsesoriaTesisWebAPI" t="IncludeRecursive">
+        <e p="AsesoriaTesisWebAPI.csproj" t="IncludeRecursive" />
+        <e p="Autenticacion" t="Include">
+          <e p="Autenticacion.cs" t="Include" />
+          <e p="DatosSesion.cs" t="Include" />
+          <e p="HelperMD5.cs" t="Include" />
+          <e p="LoginController.cs" t="Include" />
+        </e>
+        <e p="Controllers" t="Include">
+          <e p="AccesoController.cs" t="Include" />
+          <e p="ActividadController.cs" t="Include" />
+          <e p="ActividadtipoController.cs" t="Include" />
+          <e p="AlumnoController.cs" t="Include" />
+          <e p="AsesorController.cs" t="Include" />
+          <e p="CicloController.cs" t="Include" />
+          <e p="ContactoController.cs" t="Include" />
+          <e p="DocenteController.cs" t="Include" />
+          <e p="EntidadController.cs" t="Include" />
+          <e p="EntidadcicloController.cs" t="Include" />
+          <e p="EntregableController.cs" t="Include" />
+          <e p="EspecialidadController.cs" t="Include" />
+          <e p="EspecialidaddocenteController.cs" t="Include" />
+          <e p="FacultadController.cs" t="Include" />
+          <e p="MedallaController.cs" t="Include" />
+          <e p="MedallatipoController.cs" t="Include" />
+          <e p="PersonaController.cs" t="Include" />
+          <e p="RolController.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Acceso.cs" t="Include" />
+          <e p="Actividad.cs" t="Include" />
+          <e p="Actividadtipo.cs" t="Include" />
+          <e p="Alumno.cs" t="Include" />
+          <e p="Asesor.cs" t="Include" />
+          <e p="Ciclo.cs" t="Include" />
+          <e p="Contacto.cs" t="Include" />
+          <e p="Docente.cs" t="Include" />
+          <e p="Entidad.cs" t="Include" />
+          <e p="Entidadciclo.cs" t="Include" />
+          <e p="Entregable.cs" t="Include" />
+          <e p="Entregableestado.cs" t="Include" />
+          <e p="Entregablehistoria.cs" t="Include" />
+          <e p="Entregablemedalla.cs" t="Include" />
+          <e p="Escuela.cs" t="Include" />
+          <e p="Especialidad.cs" t="Include" />
+          <e p="Especialidaddocente.cs" t="Include" />
+          <e p="Facultad.cs" t="Include" />
+          <e p="Medalla.cs" t="Include" />
+          <e p="Medallatipo.cs" t="Include" />
+          <e p="Persona.cs" t="Include" />
+          <e p="PostDbContext.cs" t="Include" />
+          <e p="Rol.cs" t="Include" />
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="AsesoriaTesisWebAPI.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="AsesoriaTesisWebAPI.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

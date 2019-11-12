@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AutenticacionService} from './autenticacion.service'
 
 @Component({
   selector: 'app-autenticacion',
@@ -12,7 +13,7 @@ export class AutenticacionComponent implements OnInit {
   password: string;
   mostrarProgressBar: boolean = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private autenticacion: AutenticacionService) { }
 
   ngOnInit() {
   }
@@ -20,15 +21,30 @@ export class AutenticacionComponent implements OnInit {
   login(): void {
     this.mostrarProgressBar = true;
 
-    setTimeout(() => {
-
-      if (this.username == '2013000664' && this.password == '331904') {
-        this.router.navigate(["../inicio"]);
-      } else {
-        alert("Datos invalidos");
+    this.autenticacion.autenticarUsuario(this.username,this.password).subscribe(
+      respuestalogin => {
+        if(respuestalogin.token){
+          this.router.navigate(["../inicio"]);
+        }
+      },
+      err => {
+        alert("ahorita no joven");
+        this.mostrarProgressBar = false;
+      }, ()=>  {
+        
       }
+    )
 
-    }, 3500)
+
+    // setTimeout(() => {
+
+    //   if (this.username == '2013000664' && this.password == '331904') {
+    //     this.router.navigate(["../inicio"]);
+    //   } else {
+    //     alert("Datos invalidos");
+    //   }
+
+    // }, 3500)
   }
 
 }

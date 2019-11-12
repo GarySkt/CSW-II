@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="$USER_HOME$/.Rider2019.2/system/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.Rider2019.2/system/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_AsesoriaTesisWebAPI.1292592750.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.2/system/resharper-host/local/Transient/ReSharperHost/v192/SolutionCaches/_AsesoriaTesisWebAPI.1424100059.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="AsesoriaTesisWebAPI" t="IncludeRecursive">
         <e p="AsesoriaTesisWebAPI.csproj" t="IncludeRecursive" />
@@ -11,6 +11,8 @@
           <e p="DatosSesion.cs" t="Include" />
           <e p="HelperMD5.cs" t="Include" />
           <e p="LoginController.cs" t="Include" />
+          <e p="LoginData.cs" t="Include" />
+          <e p="LoginRespuesta.cs" t="Include" />
         </e>
         <e p="Controllers" t="Include">
           <e p="AccesoController.cs" t="Include" />

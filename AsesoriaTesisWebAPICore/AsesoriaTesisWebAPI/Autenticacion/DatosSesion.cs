@@ -22,6 +22,6 @@ namespace AsesoriaTesisWebAPI.Autenticacion
         /// <summary>
         /// Rol del usuario logueado
         /// </summary>
-        public string Rol { get; set; }
+        public int Rol { get; set; }
     }
 }

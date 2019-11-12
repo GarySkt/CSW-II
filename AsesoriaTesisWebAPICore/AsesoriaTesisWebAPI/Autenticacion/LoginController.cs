@@ -30,17 +30,19 @@ namespace AsesoriaTesisWebAPI.Autenticacion
         /// <returns>Datos del usuario (incluido el token)</returns>
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(
-            string usuario,
-            string contrasena
-            )
+        public async Task<IActionResult> Login([FromBody]LoginData loginData)
         {
-            var usuarioEncontrado = await autenticacion.autenticarUsuarioAsync(
-                usuario, contrasena);
+            var loginRespuesta = new LoginRespuesta();
+            
+            var usuarioEncontrado = await autenticacion.autenticarUsuarioAsync(loginData.usuario,loginData.contrasena);
             if (!string.IsNullOrEmpty(usuarioEncontrado.CodigoInstitucional))
             {
-                return Ok(new { token = autenticacion.generarTokenJWT(
-                    usuarioEncontrado) });
+                loginRespuesta.token = autenticacion.generarTokenJWT(usuarioEncontrado);
+                loginRespuesta.rolId = usuarioEncontrado.Rol;
+                //return Ok(new { token = autenticacion.generarTokenJWT(
+                //    usuarioEncontrado) });
+                return Ok(loginRespuesta);
+                
             }
             else
             {

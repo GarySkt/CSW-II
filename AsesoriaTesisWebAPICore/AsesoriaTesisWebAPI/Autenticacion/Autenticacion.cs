@@ -38,9 +38,7 @@ namespace AsesoriaTesisWebAPI.Autenticacion
         /// <param name="usuario">Usuario</param>
         /// <param name="contrasena">Contraseña del usuario</param>
         /// <returns>Datos de inicio de sesion del usuario</returns>
-        public async Task<DatosSesion> autenticarUsuarioAsync(
-            string usuario, 
-            string contrasena)
+        public async Task<DatosSesion> autenticarUsuarioAsync(string usuario, string contrasena)
         {
             //var sd = HelperMD5.darFormatoMD5AContrasenaUsuario(contrasena);
             var accesoUsuario = contextoBaseDatos.Acceso
@@ -53,7 +51,7 @@ namespace AsesoriaTesisWebAPI.Autenticacion
                 CodigoInstitucional = accesoUsuario?.CodigoInstitucional ?? "",
                 NombreUsuario = accesoUsuario?.Entidad?.Nombre ?? "",
                 ApellidoUsuario = accesoUsuario?.Entidad?.Apellido ?? "",
-                Rol = accesoUsuario?.Entidad?.Entidad?.Rol?.Nombre ?? ""
+                Rol = accesoUsuario?.Entidad?.Entidad?.Rol?.RolId ?? 0
             };
         }
         /// <summary>
@@ -67,9 +65,10 @@ namespace AsesoriaTesisWebAPI.Autenticacion
             var claimsSesion = obtenerClaimsSesion(usuarioInfo);
             var jwtPayload = obtnerJWTPayload(claimsSesion);
 
-            return new JwtSecurityTokenHandler().WriteToken(new JwtSecurityToken
-                (jwtHeader, jwtPayload)
-            );
+            var jwtSecurityToken = new JwtSecurityToken(jwtHeader,jwtPayload);
+            var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
+            var token = jwtSecurityTokenHandler.WriteToken(jwtSecurityToken);
+            return token;
         }
         #region Metodos privados
         /// <summary>
@@ -100,7 +99,7 @@ namespace AsesoriaTesisWebAPI.Autenticacion
                 new Claim("CodigoInstitucional", datosSesionUsuario.CodigoInstitucional),
                 new Claim("NombreUsuario", datosSesionUsuario.NombreUsuario),
                 new Claim("ApellidoUsuario", datosSesionUsuario.ApellidoUsuario),
-                new Claim(ClaimTypes.Role, datosSesionUsuario.Rol)
+                //new Claim(ClaimTypes.Role, datosSesionUsuario.Rol)
             };
             return claimsSession;
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/media/r3d/_dde_data/Construsccion-SW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj": {}
+    "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj": {}
   },
   "projects": {
-    "/media/r3d/_dde_data/Construsccion-SW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj": {
+    "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/media/r3d/_dde_data/Construsccion-SW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj",
+        "projectUniqueName": "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj",
         "projectName": "AsesoriaTesisWebAPI",
-        "projectPath": "/media/r3d/_dde_data/Construsccion-SW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj",
+        "projectPath": "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj",
         "packagesPath": "/home/r3d/.nuget/packages/",
-        "outputPath": "/media/r3d/_dde_data/Construsccion-SW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/obj/",
+        "outputPath": "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"

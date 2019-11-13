@@ -5,6 +5,7 @@ namespace AsesoriaTesisWebAPI.Models
 {
     public partial class Persona
     {
+        public int PersonaID { get; set; }
         public int EntidadId { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }

@@ -43,7 +43,7 @@ namespace AsesoriaTesisWebAPI.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("Server=localhost;Database=Tutoria;Uid=root;Pwd=;");
+                optionsBuilder.UseMySql("Server=localhost;Database=Tutoria;Uid=root;Pwd=' '");
             }
         }
 
@@ -635,10 +635,11 @@ namespace AsesoriaTesisWebAPI.Models
 
             modelBuilder.Entity<Persona>(entity =>
             {
-                entity.HasKey(e => e.EntidadId)
-                    .HasName("PRIMARY");
-
                 entity.ToTable("Persona");
+
+                entity.Property(e => e.PersonaID)
+                    .HasColumnName("PersonaID")
+                    .HasColumnType("int(11)");
 
                 entity.Property(e => e.EntidadId)
                     .HasColumnName("EntidadID")

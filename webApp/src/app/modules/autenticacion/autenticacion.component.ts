@@ -23,12 +23,14 @@ export class AutenticacionComponent implements OnInit {
 
     this.autenticacion.autenticarUsuario(this.username,this.password).subscribe(
       respuestalogin => {
-        if(respuestalogin.token){
+        if(respuestalogin.token && respuestalogin.rolId == 1){
           this.router.navigate(["../inicio"]);
+        }else{
+          this.router.navigate(["../administracion"]);
         }
       },
       err => {
-        alert("ahorita no joven");
+        alert("Error al iniciar la sesion");
         this.mostrarProgressBar = false;
       }, ()=>  {
         

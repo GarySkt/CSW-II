@@ -16,6 +16,10 @@ const routes: Routes = [
     path: 'autenticacion',
     loadChildren: () => import('./modules/autenticacion/autenticacion.module').then(m => m.AutenticacionModule)
   },
+  {
+    path: 'administracion',
+    loadChildren: () => import('./modules/administracion/administracion.module').then(m => m.AdministracionModule)
+  },
 
   { path: '', redirectTo: 'autenticacion', pathMatch: 'full' }
 ];

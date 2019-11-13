@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Medallas} from './medallas.interface';
+import {MislogrosService} from './mislogros.service'
 
 @Component({
   selector: 'app-mislogros',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MislogrosComponent implements OnInit {
 
-  constructor() { }
+  medallas: Medallas[] = new Array<Medallas>();
+  constructor(private mislogrosService: MislogrosService) { }
 
   ngOnInit() {
+    this.mislogrosService.obtenerMedallas().subscribe(
+      medallasAPI => {
+        this.medallas = medallasAPI;
+      }
+    )
   }
 
 }

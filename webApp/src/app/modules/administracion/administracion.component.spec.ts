@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MatTabContenidoComponent } from './mat-tab-contenido.component';
+import { AdministracionComponent } from './administracion.component';
 
-describe('MatTabContenidoComponent', () => {
-  let component: MatTabContenidoComponent;
-  let fixture: ComponentFixture<MatTabContenidoComponent>;
+describe('AdministracionComponent', () => {
+  let component: AdministracionComponent;
+  let fixture: ComponentFixture<AdministracionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MatTabContenidoComponent ]
+      declarations: [ AdministracionComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MatTabContenidoComponent);
+    fixture = TestBed.createComponent(AdministracionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

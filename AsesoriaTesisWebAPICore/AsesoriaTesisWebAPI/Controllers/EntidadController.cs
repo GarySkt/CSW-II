@@ -24,7 +24,9 @@ namespace AsesoriaTesisWebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Entidad>>> GetEntidad()
         {
-            return await _context.Entidad.ToListAsync();
+            return await _context.Entidad
+                
+            .ToListAsync();
         }
 
         // GET: api/Entidad/5

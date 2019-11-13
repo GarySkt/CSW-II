@@ -1,30 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj": {}
+    "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj": {
+    "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
+        "projectUniqueName": "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj",
         "projectName": "AsesoriaTesisWebAPI",
-        "projectPath": "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
-        "packagesPath": "C:\\Users\\Aldo.ALDOPC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\obj\\",
+        "projectPath": "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj",
+        "packagesPath": "/home/r3d/.nuget/packages/",
+        "outputPath": "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Aldo.ALDOPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/r3d/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -76,8 +74,7 @@
             "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     }

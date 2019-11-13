@@ -15,7 +15,8 @@ CREATE TABLE Entidad (
 );
 
 CREATE TABLE Persona (
-	EntidadID INT NOT NULL PRIMARY KEY,
+	PersonaID INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	EntidadID INT NOT NULL,
 	Nombre		VARCHAR(150) NOT NULL,
 	Apellido	VARCHAR(150) NOT NULL,
 	FechaNacimiento		DATE NOT NULL DEFAULT '1500-05-05',
@@ -68,7 +69,7 @@ CREATE TABLE EntidadCiclo (
 );
 
 CREATE TABLE Alumno (
-	AlumnoID 			INT NOT NULL PRIMARY KEY,	
+	AlumnoID 			INT NOT NULL,	
 	EscuelaID			INT NOT NULL,
 	CreditoAprobado		INT NOT NULL,
 	FOREIGN KEY (AlumnoID) REFERENCES Entidad(EntidadID),

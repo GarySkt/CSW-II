@@ -33,6 +33,8 @@ VALUES (1, "asdasd", "asdasd", "3333-03-03", 44444444);
 SELECT*FROM Persona;
 
 
+
+
 INSERT INTO Acceso (EntidadID,CodigoInstitucional,Pass)
 VALUES (1, "aldo", "123456");
 INSERT INTO Acceso (EntidadID,CodigoInstitucional,Pass)
@@ -84,3 +86,23 @@ VALUES (1, 1, 190);
 INSERT INTO Alumno (AlumnoID,EscuelaID,CreditoAprobado)
 VALUES (1, 1, 181);
 SELECT*FROM Alumno;
+
+
+INSERT INTO Docente (DocenteID,EscuelaID,Titulo)
+VALUES (1, 1, "Maestro");
+SELECT*FROM Docente;
+
+
+INSERT INTO Especialidad (EspecialidadID,Nombre,Descripcion)
+VALUES (1,"Realidad Aumentada", "gasdgasdfgsadfsadf");
+INSERT INTO Especialidad (EspecialidadID,Nombre,Descripcion)
+VALUES (2,"Big Data", "Dataaaaaa");
+SELECT*FROM Especialidad;
+
+
+INSERT INTO EspecialidadDocente (DocenteID,EspecialidadID)
+VALUES (1, 1);
+INSERT INTO EspecialidadDocente (DocenteID,EspecialidadID)
+VALUES (1,2);
+SELECT*FROM EspecialidadDocente;
+

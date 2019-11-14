@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AsesoriaTesisWebAPI.Models;
+using AsesoriaTesisWebAPI.DataAccess;
+using AsesoriaTesisWebAPI.Entity;
 
 namespace AsesoriaTesisWebAPI.Controllers
 {
@@ -14,10 +16,12 @@ namespace AsesoriaTesisWebAPI.Controllers
     public class DocenteController : ControllerBase
     {
         private readonly PostDbContext _context;
+        private DocenteDA docenteDA;
 
         public DocenteController(PostDbContext context)
         {
             _context = context;
+            docenteDA = new DocenteDA();
         }
 
         // GET: api/Docente
@@ -43,6 +47,7 @@ namespace AsesoriaTesisWebAPI.Controllers
 
             return docente;
         }
+
 
         // PUT: api/Docente/5
         [HttpPut("{id}")]
@@ -72,6 +77,20 @@ namespace AsesoriaTesisWebAPI.Controllers
             }
 
             return NoContent();
+        }
+
+        // GET: api/Docente/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<DocenteEspecialidad>>> GetDocenteEspecialidad(int idDocente)
+        {
+            var docente = await docenteDA.GetDocenteEspecialidad(idDocente);
+
+            if (docente == null)
+            {
+                return NotFound();
+            }
+
+            return docente;
         }
 
         // POST: api/Docente

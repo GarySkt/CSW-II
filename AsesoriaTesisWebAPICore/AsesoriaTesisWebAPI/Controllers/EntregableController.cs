@@ -22,26 +22,36 @@ namespace AsesoriaTesisWebAPI.Controllers
         }
 
 
-        //[HttpGet]
-        //public List<EntregableDTO> Get()
-        //{
-        //    var entregables = (from me in _context.Medalla
-        //                    join ti in _context.Medallatipo on me.MedallaTipoId equals ti.MedallaTipoId
-        //                    select new MedallaDTO()
-        //                    {
-        //                        MedallaId = me.MedallaId,
-        //                        Nombre = me.Nombre,
-        //                        ImagenUrl = me.ImagenUrl,
-        //                        Descripcion = me.Descripcion,
-        //                        MedallaTipoRelacional = new MedallaTipoDTO()
-        //                        {
-        //                            MedallaTipoId = ti.MedallaTipoId,
-        //                            Nombre = ti.Nombre,
-        //                            Descripcion = ti.Descripcion
-        //                        }
-        //                    }).ToList();
-        //    return entregables;
-        //}
+        [HttpGet]
+        public List<EntregableDTO> Get()
+        {
+            var entregables = (from en in _context.Entregable
+                               join enme in _context.Entregablemedalla on en.EntregableId equals enme.EntregableId
+                               join me in _context.Medalla on enme.MedallaId equals me.MedallaId
+                               select new EntregableDTO()
+                            {
+                                Descripcion= en.Descripcion,
+                                Comentario= en.Comentario,
+                                NumeroOrden = en.NumeroOrden,
+                                FechaAprobado = en.FechaAprobado,
+                                EntregablemedallaRelacional = new EntregablemedallaDTO()
+                                {
+                                    //EntregableMedallaId = enme.EntregableMedallaId,
+                                    EntregableId= enme.EntregableId,
+                                    MedallaId = enme.MedallaId,
+                                    Fecha = enme.Fecha,
+                                    MedallaRelacional = new MedallaDTO()
+                                    {
+                                        //MedallaId = me.MedallaId,
+                                        Nombre = me.Nombre,
+                                        ImagenUrl = me.ImagenUrl,
+                                        Descripcion = me.Descripcion,
+                                    }
+                                }
+                            }).ToList();
+            return entregables;
+        }
+
         /*
         // GET: api/Entregable
         [HttpGet]

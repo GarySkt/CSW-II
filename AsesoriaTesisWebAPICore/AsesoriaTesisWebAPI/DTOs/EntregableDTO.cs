@@ -7,11 +7,11 @@ namespace AsesoriaTesisWebAPI.DTOs
 {
     public class EntregableDTO
     {
-        public EntregableDTO()
+        /*public EntregableDTO()
         {
             EntregablehistoriaRelacional = new HashSet<EntregablehistoriaDTO>();
             EntregablemedallaRelacional = new HashSet<EntregablemedallaDTO>();
-        }
+        }*/
         public int EntregableId { get; set; }
         public int ActividadId { get; set; }
         public string Descripcion { get; set; }
@@ -20,8 +20,8 @@ namespace AsesoriaTesisWebAPI.DTOs
         public DateTime FechaAprobado { get; set; }
 
         public ActividadDTO ActividadRelacional { get; set; }
-        public ICollection<EntregablehistoriaDTO> EntregablehistoriaRelacional { get; set; }
-        public ICollection<EntregablemedallaDTO> EntregablemedallaRelacional { get; set; }
+        public EntregablehistoriaDTO EntregablehistoriaRelacional { get; set; }
+        public EntregablemedallaDTO EntregablemedallaRelacional { get; set; }
     }
 
 }

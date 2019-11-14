@@ -48,6 +48,21 @@ namespace AsesoriaTesisWebAPI.Controllers
             return docente;
         }
 
+        // GET: api/Docente/GetEspecialidadDocentexamp/1
+        [HttpGet]
+        [Route("[action]/{idEspecialidad}")]
+        public async Task<ActionResult<IEnumerable<DocenteEspecialidad>>> GetEspecialidadDocente(int idEspecialidad)
+        {
+            var docente = await docenteDA.GetEspecialidadDocente(idEspecialidad);
+
+            if (docente == null)
+            {
+                return NotFound();
+            }
+
+            return docente;
+        }
+              
         // GET: api/Docente/GetDocenteEspecialidad/1
         [HttpGet]
         [Route("[action]/{idDocente}")]

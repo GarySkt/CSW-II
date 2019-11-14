@@ -69,7 +69,8 @@ namespace AsesoriaTesisWebAPI.DataAccess
                                            DocenteNombre = p.Nombre,
                                            DocenteApellido = p.Apellido,
                                            EscuelaID = e.EscuelaId,
-                                           EscuelaNombre = e.Nombre
+                                           EscuelaNombre = e.Nombre,
+                                           EspecialidadID = ed.EspecialidadId
                                        }).ToListAsync();
             
             foreach (var lista in listarDocente)
@@ -80,7 +81,8 @@ namespace AsesoriaTesisWebAPI.DataAccess
                     DocenteNombre = lista.DocenteNombre,
                     DocenteApellido = lista.DocenteApellido,
                     EscuelaID = lista.EscuelaID,
-                    EscuelaNombre = lista.EscuelaNombre
+                    EscuelaNombre = lista.EscuelaNombre,
+                    EspecialidadID = lista.EspecialidadID
                 };
 
                 listaDocente.Add(docenteEspecialidad);

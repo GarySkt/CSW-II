@@ -32,21 +32,9 @@ export class AutenticacionComponent implements OnInit {
       err => {
         alert("Error al iniciar la sesion");
         this.mostrarProgressBar = false;
-      }, ()=>  {
-        
+      }, ()=>  {        
       }
     )
-
-
-    // setTimeout(() => {
-
-    //   if (this.username == '2013000664' && this.password == '331904') {
-    //     this.router.navigate(["../inicio"]);
-    //   } else {
-    //     alert("Datos invalidos");
-    //   }
-
-    // }, 3500)
   }
 
 }

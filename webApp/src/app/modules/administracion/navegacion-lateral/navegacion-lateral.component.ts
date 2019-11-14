@@ -12,7 +12,9 @@ export class NavegacionLateralComponent implements OnInit {
 
   ngOnInit() {
   }
+
   salir(): void{
     this.router.navigate(["../autenticacion"]);
   }
+
 }

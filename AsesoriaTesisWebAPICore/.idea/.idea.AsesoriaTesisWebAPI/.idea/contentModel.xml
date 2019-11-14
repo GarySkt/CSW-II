@@ -34,6 +34,12 @@
           <e p="PersonaController.cs" t="Include" />
           <e p="RolController.cs" t="Include" />
         </e>
+        <e p="DataAccess" t="Include">
+          <e p="DocenteDA.cs" t="Include" />
+        </e>
+        <e p="Entity" t="Include">
+          <e p="DocenteEspecialidad.cs" t="Include" />
+        </e>
         <e p="Models" t="Include">
           <e p="Acceso.cs" t="Include" />
           <e p="Actividad.cs" t="Include" />

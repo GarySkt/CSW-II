@@ -43,7 +43,7 @@ namespace AsesoriaTesisWebAPI.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseMySql("Server=localhost;Database=Tutoria;Uid=root;Pwd='iddqd'");
+                optionsBuilder.UseMySql("Server=localhost;Database=Tutoria;Uid=root;Pwd=''");
             }
         }
 

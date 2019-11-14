@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { AsesoriaComponent } from './asesoria.component';
 
 const routes: Routes = [
-
   { 
     path: '',
     component: AsesoriaComponent ,    

@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'administracion',
     loadChildren: () => import('./modules/administracion/administracion.module').then(m => m.AdministracionModule)
   },
+  {
+    path: 'docente',
+    loadChildren: () => import('./modules/docente/docente.module').then(m => m.DocenteModule)
+  },
 
   { path: '', redirectTo: 'autenticacion', pathMatch: 'full' }
 ];

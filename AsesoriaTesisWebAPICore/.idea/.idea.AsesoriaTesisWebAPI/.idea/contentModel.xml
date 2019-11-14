@@ -34,6 +34,30 @@
           <e p="PersonaController.cs" t="Include" />
           <e p="RolController.cs" t="Include" />
         </e>
+        <e p="DTOs" t="Include">
+          <e p="AccesoDTO.cs" t="Include" />
+          <e p="ActividadDTO.cs" t="Include" />
+          <e p="ActividadtipoDTO.cs" t="Include" />
+          <e p="AlumnoDTO.cs" t="Include" />
+          <e p="AsesorDTO.cs" t="Include" />
+          <e p="CicloDTO.cs" t="Include" />
+          <e p="ContactoDTO.cs" t="Include" />
+          <e p="DocenteDTO.cs" t="Include" />
+          <e p="EntidadDTO.cs" t="Include" />
+          <e p="EntidadcicloDTO.cs" t="Include" />
+          <e p="EntregableDTO.cs" t="Include" />
+          <e p="EntregableestadoDTO.cs" t="Include" />
+          <e p="EntregablehistoriaDTO.cs" t="Include" />
+          <e p="EntregablemedallaDTO.cs" t="Include" />
+          <e p="EscuelaDTO.cs" t="Include" />
+          <e p="EspecialidadDTO.cs" t="Include" />
+          <e p="EspecialidaddocenteDTO.cs" t="Include" />
+          <e p="FacultadDTO.cs" t="Include" />
+          <e p="MedallaDTO.cs" t="Include" />
+          <e p="MedallaTipoDTO.cs" t="Include" />
+          <e p="PersonaDTO.cs" t="Include" />
+          <e p="RolDTO.cs" t="Include" />
+        </e>
         <e p="DataAccess" t="Include">
           <e p="DocenteDA.cs" t="Include" />
         </e>

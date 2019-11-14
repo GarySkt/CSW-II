@@ -77,7 +77,7 @@ namespace AsesoriaTesisWebAPI.Models
 
             modelBuilder.Entity<Actividad>(entity =>
             {
-                entity.ToTable("actividad");
+                entity.ToTable("Actividad");
 
                 entity.HasIndex(e => e.ActividadTipoId)
                     .HasName("ActividadTipoID");
@@ -139,7 +139,7 @@ namespace AsesoriaTesisWebAPI.Models
 
             modelBuilder.Entity<Actividadtipo>(entity =>
             {
-                entity.ToTable("actividadtipo");
+                entity.ToTable("Actividadtipo");
 
                 entity.Property(e => e.ActividadTipoId)
                     .HasColumnName("ActividadTipoID")
@@ -154,7 +154,7 @@ namespace AsesoriaTesisWebAPI.Models
 
             modelBuilder.Entity<Alumno>(entity =>
             {
-                entity.ToTable("alumno");
+                entity.ToTable("Alumno");
 
                 entity.HasIndex(e => e.EscuelaId)
                     .HasName("EscuelaID");
@@ -203,7 +203,7 @@ namespace AsesoriaTesisWebAPI.Models
 
             modelBuilder.Entity<Ciclo>(entity =>
             {
-                entity.ToTable("ciclo");
+                entity.ToTable("Ciclo");
 
                 entity.Property(e => e.CicloId)
                     .HasColumnName("CicloID")
@@ -221,7 +221,7 @@ namespace AsesoriaTesisWebAPI.Models
                 entity.HasKey(e => e.EntidadId)
                     .HasName("PRIMARY");
 
-                entity.ToTable("contacto");
+                entity.ToTable("Contacto");
 
                 entity.Property(e => e.EntidadId)
                     .HasColumnName("EntidadID")
@@ -311,7 +311,7 @@ namespace AsesoriaTesisWebAPI.Models
 
             modelBuilder.Entity<Entidadciclo>(entity =>
             {
-                entity.ToTable("entidadciclo");
+                entity.ToTable("Entidadciclo");
 
                 entity.HasIndex(e => e.CicloId)
                     .HasName("CicloID");
@@ -346,7 +346,7 @@ namespace AsesoriaTesisWebAPI.Models
 
             modelBuilder.Entity<Entregable>(entity =>
             {
-                entity.ToTable("entregable");
+                entity.ToTable("Entregable");
 
                 entity.HasIndex(e => e.ActividadId)
                     .HasName("ActividadID");
@@ -382,7 +382,7 @@ namespace AsesoriaTesisWebAPI.Models
 
             modelBuilder.Entity<Entregableestado>(entity =>
             {
-                entity.ToTable("entregableestado");
+                entity.ToTable("Entregableestado");
 
                 entity.Property(e => e.EntregableEstadoId)
                     .HasColumnName("EntregableEstadoID")
@@ -410,7 +410,7 @@ namespace AsesoriaTesisWebAPI.Models
 
             modelBuilder.Entity<Entregablehistoria>(entity =>
             {
-                entity.ToTable("entregablehistoria");
+                entity.ToTable("Entregablehistoria");
 
                 entity.HasIndex(e => e.EntregableEstadoId)
                     .HasName("EntregableEstadoID");
@@ -445,7 +445,7 @@ namespace AsesoriaTesisWebAPI.Models
 
             modelBuilder.Entity<Entregablemedalla>(entity =>
             {
-                entity.ToTable("entregablemedalla");
+                entity.ToTable("Entregablemedalla");
 
                 entity.HasIndex(e => e.EntregableId)
                     .HasName("EntregableID");
@@ -514,7 +514,7 @@ namespace AsesoriaTesisWebAPI.Models
 
             modelBuilder.Entity<Especialidad>(entity =>
             {
-                entity.ToTable("especialidad");
+                entity.ToTable("Especialidad");
 
                 entity.Property(e => e.EspecialidadId)
                     .HasColumnName("EspecialidadID")
@@ -531,7 +531,7 @@ namespace AsesoriaTesisWebAPI.Models
 
             modelBuilder.Entity<Especialidaddocente>(entity =>
             {
-                entity.ToTable("especialidaddocente");
+                entity.ToTable("Especialidaddocente");
 
                 entity.HasIndex(e => e.DocenteId)
                     .HasName("DocenteID");
@@ -618,7 +618,7 @@ namespace AsesoriaTesisWebAPI.Models
 
             modelBuilder.Entity<Medallatipo>(entity =>
             {
-                entity.ToTable("Medallatipo");
+                entity.ToTable("MedallaTipo");
 
                 entity.Property(e => e.MedallaTipoId)
                     .HasColumnName("MedallaTipoID")

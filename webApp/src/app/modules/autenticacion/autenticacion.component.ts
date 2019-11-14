@@ -21,11 +21,28 @@ export class AutenticacionComponent implements OnInit {
   login(): void {
     this.mostrarProgressBar = true;
 
-    this.autenticacion.autenticarUsuario(this.username,this.password).subscribe(
+    //this.autenticacion.autenticarUsuario(this.username,this.password).subscribe(
+      //respuestalogin => {
+        //if(respuestalogin.token && respuestalogin.rolId == 1){
+          //this.router.navigate(["../inicio"]);
+       // }else{
+        //  this.router.navigate(["../administracion"]);
+       // }
+      //},
+      //err => {
+       // alert("Error al iniciar la sesion");
+        //this.mostrarProgressBar = false;
+      //}, ()=>  {        
+      //}
+   // )
+
+   this.autenticacion.autenticarUsuario(this.username,this.password).subscribe(
       respuestalogin => {
         if(respuestalogin.token && respuestalogin.rolId == 1){
           this.router.navigate(["../inicio"]);
-        }else{
+        }else if(respuestalogin.token && respuestalogin.rolId == 2){
+          this.router.navigate(["../docente"]);
+        }else if(respuestalogin.token && respuestalogin.rolId == 3){
           this.router.navigate(["../administracion"]);
         }
       },

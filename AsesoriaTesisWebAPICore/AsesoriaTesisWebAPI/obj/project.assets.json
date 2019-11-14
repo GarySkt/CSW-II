@@ -13852,28 +13852,26 @@
     ]
   },
   "packageFolders": {
-    "/home/r3d/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\MDOV\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj",
+      "projectUniqueName": "F:\\VisualStudio\\REPOSITORIO\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
       "projectName": "AsesoriaTesisWebAPI",
-      "projectPath": "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj",
-      "packagesPath": "/home/r3d/.nuget/packages/",
-      "outputPath": "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/obj/",
+      "projectPath": "F:\\VisualStudio\\REPOSITORIO\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
+      "packagesPath": "C:\\Users\\MDOV\\.nuget\\packages\\",
+      "outputPath": "F:\\VisualStudio\\REPOSITORIO\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/home/r3d/.config/NuGet/NuGet.Config"
+        "C:\\Users\\MDOV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -13933,7 +13931,8 @@
           "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

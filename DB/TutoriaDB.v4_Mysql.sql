@@ -102,7 +102,6 @@ CREATE TABLE Asesor (
 	AsesorID		INT NOT NULL PRIMARY KEY,
 	Disponibilidad	INT NOT NULL DEFAULT 1, /*no disponible 0, disponible 1*/
 	FOREIGN KEY (AsesorID) REFERENCES Docente(DocenteID)
-	
 );
 
 CREATE TABLE ActividadTipo (
@@ -175,5 +174,3 @@ CREATE TABLE EntregableMedalla (
 	FOREIGN KEY (EntregableID) REFERENCES Entregable(EntregableID),
 	FOREIGN KEY (MedallaID) REFERENCES Medalla(MedallaID)	
 );
-
-

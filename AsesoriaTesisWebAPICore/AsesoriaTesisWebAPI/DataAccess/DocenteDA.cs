@@ -32,6 +32,7 @@ namespace AsesoriaTesisWebAPI.DataAccess
             {
                 DocenteEspecialidad docenteEspecialidad = new DocenteEspecialidad()
                 {
+                    DocenteID = lista.DocenteId,
                     EspecialidadID = lista.EspecialidadId,
                     EspecialidadNombre = lista.Especialidad.Nombre
                 };

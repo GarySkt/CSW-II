@@ -77,7 +77,7 @@ CREATE TABLE Alumno (
 );
 
 CREATE TABLE Docente(
-	DocenteID		INT NOT NULL PRIMARY KEY,
+	DocenteID		INT NOT NULL,
 	EscuelaID		INT NOT NULL,
 	Titulo			VARCHAR(100) NOT NULL,
 	FOREIGN KEY (DocenteID) REFERENCES Entidad(EntidadID),
@@ -175,5 +175,3 @@ CREATE TABLE EntregableMedalla (
 	FOREIGN KEY (EntregableID) REFERENCES Entregable(EntregableID),
 	FOREIGN KEY (MedallaID) REFERENCES Medalla(MedallaID)	
 );
-
-

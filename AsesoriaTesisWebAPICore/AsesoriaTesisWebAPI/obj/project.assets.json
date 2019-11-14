@@ -13848,28 +13848,30 @@
     ]
   },
   "packageFolders": {
-    "/home/r3d/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\Aldo.ALDOPC\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
       "projectName": "AsesoriaTesisWebAPI",
-      "projectPath": "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/AsesoriaTesisWebAPI.csproj",
-      "packagesPath": "/home/r3d/.nuget/packages/",
-      "outputPath": "/media/r3d/_dde_data/CSW-II/AsesoriaTesisWebAPICore/AsesoriaTesisWebAPI/obj/",
+      "projectPath": "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
+      "packagesPath": "C:\\Users\\Aldo.ALDOPC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/r3d/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Aldo.ALDOPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -13929,7 +13931,8 @@
           "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

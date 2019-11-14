@@ -156,6 +156,8 @@ VALUES(8, "Titulo", "008-bronze-medal-1", 1, "El título refleja la intención q
 SELECT*FROM Medalla;
 
 
+
+
 INSERT INTO Asesor (AsesorID,Disponibilidad)
 VALUES (3,1);
 INSERT INTO Asesor (AsesorID,Disponibilidad)
@@ -165,49 +167,48 @@ VALUES (7,1);
 SELECT*FROM Asesor;
 
 
-CREATE TABLE ActividadTipo (
-	ActividadTipoID		INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	Nombre				VARCHAR(150) NOT NULL,
-	CreditoRequerido	INT	NOT NULL
-);
 INSERT INTO ActividadTipo (ActividadTipoID,Nombre,CreditoRequerido)
 VALUES (1,"Tesis",190);
 INSERT INTO ActividadTipo (ActividadTipoID,Nombre,CreditoRequerido)
-VALUES (1,"Investigacion",190);
+VALUES (2,"Investigacion",190);
 INSERT INTO ActividadTipo (ActividadTipoID,Nombre,CreditoRequerido)
-VALUES (1,"Practicas Pre-Profesionales",190);
-SELECT*FROM Asesor;
+VALUES (3,"Practicas Pre-Profesionales",190);
+SELECT*FROM ActividadTipo;
 
 
-CREATE TABLE Actividad (
-	ActividadID		INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	Finalizada		INT NOT NULL,
-	AlumnoID		INT NOT NULL,
-	Titulo			VARCHAR(200) NOT NULL,
-	Resumen			VARCHAR(500) NOT NULL,
-	Descripcion		VARCHAR(300) NOT NULL,	
-	AsesorID 		INT NOT NULL,
-	ActividadTipoID INT NOT NULL, /*Tesis, Articulo, Practicas, etc.*/
-	FOREIGN KEY (AlumnoID) REFERENCES Alumno(AlumnoID),
-	FOREIGN KEY (AsesorID) REFERENCES Asesor(AsesorID),
-	FOREIGN KEY (ActividadTipoID) REFERENCES ActividadTipo(ActividadTipoID)
-);
 INSERT INTO Actividad
 (ActividadID,Finalizada,AlumnoID,Titulo,Resumen,Descripcion,AsesorID,ActividadTipoID)
 VALUES
-(1,1,1,"Realidad aumentada para aumentar el interes de niños de 5 años en ciencia",
+(1,0,1,"Realidad aumentada para aumentar el interes de niños de 5 años en ciencia",
 "La realidad auemntada nos permite una nmayo interaccion ........",
-"Este proyecto utiliza se realizara en un app",1);
+"Este proyecto utiliza se realizara en un app",3,1);
+INSERT INTO Actividad
+(ActividadID,Finalizada,AlumnoID,Titulo,Resumen,Descripcion,AsesorID,ActividadTipoID)
+VALUES
+(2,0,2,"Mejora en atencion de essalud a traves de telemedicina con aplicaciones moviles",
+"En el peru la salud es un necesidad primaria que esta en deficit debido a la demora y ........",
+"Este proyecto utilizara una aplicacion movil para el publi",6,1);
+SELECT*FROM Actividad;
 
 
+INSERT INTO Entregable(EntregableID,ActividadID,Descripcion,Comentario,NumeroOrden,FechaAprobado)
+VALUES (1,1,"Entregable 1 de Realidad Aumentada","Marco teorico finalizado",1,"2222-02-02");
+INSERT INTO Entregable(EntregableID,ActividadID,Descripcion,Comentario,NumeroOrden,FechaAprobado)
+VALUES (2,1,"Entregable 2 de Realidad Aumentada","Correcion de marco teorico",1,"2222-02-03");
+INSERT INTO Entregable(EntregableID,ActividadID,Descripcion,Comentario,NumeroOrden,FechaAprobado)
+VALUES (3,2,"Entregable 1 de telemedicina","Antecedentes especificados",1,"2019-09-01");
+INSERT INTO Entregable(EntregableID,ActividadID,Descripcion,Comentario,NumeroOrden,FechaAprobado)
+VALUES (4,2,"Entregable 3 de telemedicina","Marco teorico de 2 variables terminado",1,"2019-10-08");
+INSERT INTO Entregable(EntregableID,ActividadID,Descripcion,Comentario,NumeroOrden,FechaAprobado)
+VALUES (5,1,"Entregable 3 de Realidad Aumentada","Correcion de titulo",1,"2222-03-25");
+SELECT*FROM Entregable;
 
-INSERT INTO Entregable (EntregableID,ActividadID,Descripcion,Comentario,NumeroOrden,FechaAprobado)
-VALUES (1,"Realidad Aumentada", "gasdgasdfgsadfsadf");
-Entregable (
-	EntregableID	INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	ActividadID		INT NOT NULL,
-	Descripcion		VARCHAR(300) NOT NULL,
-	Comentario		VARCHAR(300) NOT NULL,	
-	NumeroOrden		INT NOT NULL,
-	FechaAprobado	DATE NOT NULL DEFAULT '1500-05-05',
+
+INSERT INTO EntregableMedalla (EntregableMedallaID,EntregableID,MedallaID,Fecha)
+VALUES (1,2,2,"2222-02-03");
+INSERT INTO EntregableMedalla (EntregableMedallaID,EntregableID,MedallaID,Fecha)
+VALUES (2,5,8,"2222-03-25");
+INSERT INTO EntregableMedalla (EntregableMedallaID,EntregableID,MedallaID,Fecha)
+VALUES (3,4,1,"2019-10-10");
+SELECT*FROM EntregableMedalla;
 

@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj": {}
+    "F:\\VisualStudio\\REPOSITORIO\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj": {
+    "F:\\VisualStudio\\REPOSITORIO\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
+        "projectUniqueName": "F:\\VisualStudio\\REPOSITORIO\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
         "projectName": "AsesoriaTesisWebAPI",
-        "projectPath": "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
-        "packagesPath": "C:\\Users\\Aldo.ALDOPC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\obj\\",
+        "projectPath": "F:\\VisualStudio\\REPOSITORIO\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
+        "packagesPath": "C:\\Users\\MDOV\\.nuget\\packages\\",
+        "outputPath": "F:\\VisualStudio\\REPOSITORIO\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Aldo.ALDOPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\MDOV\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

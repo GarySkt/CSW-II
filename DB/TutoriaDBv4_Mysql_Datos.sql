@@ -94,7 +94,7 @@ SELECT*FROM EntidadCiclo;
 INSERT INTO Alumno (AlumnoID,EscuelaID,CreditoAprobado)
 VALUES (1, 1, 190);
 INSERT INTO Alumno (AlumnoID,EscuelaID,CreditoAprobado)
-VALUES (1, 1, 181);
+VALUES (2, 1, 181);
 SELECT*FROM Alumno;
 
 INSERT INTO Docente (DocenteID,EscuelaID,Titulo)
@@ -154,4 +154,60 @@ VALUES(7, "Presupuesto", "007-silver-medal-1", 1, "En el presupuesto estructurad
 INSERT INTO Medalla(MedallaID, Nombre, ImagenURL, MedallaTipoID, Descripcion)
 VALUES(8, "Titulo", "008-bronze-medal-1", 1, "El título refleja la intención que se propone\r\nen la investigación");
 SELECT*FROM Medalla;
+
+
+INSERT INTO Asesor (AsesorID,Disponibilidad)
+VALUES (3,1);
+INSERT INTO Asesor (AsesorID,Disponibilidad)
+VALUES (6,1);
+INSERT INTO Asesor (AsesorID,Disponibilidad)
+VALUES (7,1);
+SELECT*FROM Asesor;
+
+
+CREATE TABLE ActividadTipo (
+	ActividadTipoID		INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	Nombre				VARCHAR(150) NOT NULL,
+	CreditoRequerido	INT	NOT NULL
+);
+INSERT INTO ActividadTipo (ActividadTipoID,Nombre,CreditoRequerido)
+VALUES (1,"Tesis",190);
+INSERT INTO ActividadTipo (ActividadTipoID,Nombre,CreditoRequerido)
+VALUES (1,"Investigacion",190);
+INSERT INTO ActividadTipo (ActividadTipoID,Nombre,CreditoRequerido)
+VALUES (1,"Practicas Pre-Profesionales",190);
+SELECT*FROM Asesor;
+
+
+CREATE TABLE Actividad (
+	ActividadID		INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	Finalizada		INT NOT NULL,
+	AlumnoID		INT NOT NULL,
+	Titulo			VARCHAR(200) NOT NULL,
+	Resumen			VARCHAR(500) NOT NULL,
+	Descripcion		VARCHAR(300) NOT NULL,	
+	AsesorID 		INT NOT NULL,
+	ActividadTipoID INT NOT NULL, /*Tesis, Articulo, Practicas, etc.*/
+	FOREIGN KEY (AlumnoID) REFERENCES Alumno(AlumnoID),
+	FOREIGN KEY (AsesorID) REFERENCES Asesor(AsesorID),
+	FOREIGN KEY (ActividadTipoID) REFERENCES ActividadTipo(ActividadTipoID)
+);
+INSERT INTO Actividad
+(ActividadID,Finalizada,AlumnoID,Titulo,Resumen,Descripcion,AsesorID,ActividadTipoID)
+VALUES
+(1,1,1,"Realidad aumentada para aumentar el interes de niños de 5 años en ciencia",
+"La realidad auemntada nos permite una nmayo interaccion ........",
+"Este proyecto utiliza se realizara en un app",1);
+
+
+
+INSERT INTO Entregable (EntregableID,ActividadID,Descripcion,Comentario,NumeroOrden,FechaAprobado)
+VALUES (1,"Realidad Aumentada", "gasdgasdfgsadfsadf");
+Entregable (
+	EntregableID	INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	ActividadID		INT NOT NULL,
+	Descripcion		VARCHAR(300) NOT NULL,
+	Comentario		VARCHAR(300) NOT NULL,	
+	NumeroOrden		INT NOT NULL,
+	FechaAprobado	DATE NOT NULL DEFAULT '1500-05-05',
 

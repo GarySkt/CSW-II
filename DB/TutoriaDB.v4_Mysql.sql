@@ -77,7 +77,7 @@ CREATE TABLE Alumno (
 );
 
 CREATE TABLE Docente(
-	DocenteID		INT NOT NULL,
+	DocenteID		INT NOT NULL PRIMARY KEY,
 	EscuelaID		INT NOT NULL,
 	Titulo			VARCHAR(100) NOT NULL,
 	FOREIGN KEY (DocenteID) REFERENCES Entidad(EntidadID),
@@ -102,7 +102,6 @@ CREATE TABLE Asesor (
 	AsesorID		INT NOT NULL PRIMARY KEY,
 	Disponibilidad	INT NOT NULL DEFAULT 1, /*no disponible 0, disponible 1*/
 	FOREIGN KEY (AsesorID) REFERENCES Docente(DocenteID)
-	
 );
 
 CREATE TABLE ActividadTipo (

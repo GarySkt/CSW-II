@@ -30,13 +30,13 @@ namespace AsesoriaTesisWebAPI.Controllers
                           join ti in _context.Medallatipo on me.MedallaTipoId equals ti.MedallaTipoId
                           select new MedallaDTO()
                           {
-                              MedallaId = me.MedallaId,
+                              //MedallaId = me.MedallaId,
                               Nombre = me.Nombre,
                               ImagenUrl = me.ImagenUrl,
                               Descripcion = me.Descripcion,
                               MedallaTipoRelacional = new MedallaTipoDTO()
                               {
-                                  MedallaTipoId = ti.MedallaTipoId,
+                                  //MedallaTipoId = ti.MedallaTipoId,
                                   Nombre = ti.Nombre,
                                   Descripcion = ti.Descripcion
                               }

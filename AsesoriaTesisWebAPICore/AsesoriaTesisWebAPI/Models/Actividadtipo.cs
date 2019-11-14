@@ -14,6 +14,6 @@ namespace AsesoriaTesisWebAPI.Models
         public string Nombre { get; set; }
         public int CreditoRequerido { get; set; }
 
-        public virtual ICollection<Actividad> Actividad { get; set; }
+        public ICollection<Actividad> Actividad { get; set; }
     }
 }

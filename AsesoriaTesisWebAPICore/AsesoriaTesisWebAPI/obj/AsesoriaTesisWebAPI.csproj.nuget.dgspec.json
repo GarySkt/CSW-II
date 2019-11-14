@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "F:\\VisualStudio\\REPOSITORIO\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj": {}
+    "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj": {}
   },
   "projects": {
-    "F:\\VisualStudio\\REPOSITORIO\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj": {
+    "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\VisualStudio\\REPOSITORIO\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
         "projectName": "AsesoriaTesisWebAPI",
-        "projectPath": "F:\\VisualStudio\\REPOSITORIO\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
-        "packagesPath": "C:\\Users\\MDOV\\.nuget\\packages\\",
-        "outputPath": "F:\\VisualStudio\\REPOSITORIO\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\obj\\",
+        "projectPath": "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\AsesoriaTesisWebAPI.csproj",
+        "packagesPath": "C:\\Users\\Aldo.ALDOPC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Aldo.ALDOPC\\Documents\\GitHub\\CSW-II\\AsesoriaTesisWebAPICore\\AsesoriaTesisWebAPI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\MDOV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Aldo.ALDOPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,6 +61,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[2.2.4, )"
+            },
+            "MySql.Data.Entity": {
+              "target": "Package",
+              "version": "[6.10.9, )"
+            },
+            "MySql.Data.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.18, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",

@@ -23,6 +23,16 @@ INSERT INTO Entidad (EntidadID,RolID,estaActivo)
 VALUES (6,2,1);
 INSERT INTO Entidad (EntidadID,RolID,estaActivo)
 VALUES (7,2,1);
+INSERT INTO Entidad (EntidadID,RolID,estaActivo)
+VALUES (8,2,1);
+INSERT INTO Entidad (EntidadID,RolID,estaActivo)
+VALUES (9,2,1);
+INSERT INTO Entidad (EntidadID,RolID,estaActivo)
+VALUES (10,2,1);
+INSERT INTO Entidad (EntidadID,RolID,estaActivo)
+VALUES (11,2,1);
+INSERT INTO Entidad (EntidadID,RolID,estaActivo)
+VALUES (12,2,1);
 SELECT*FROM Entidad;
 
 
@@ -31,7 +41,7 @@ VALUES (1,1, "Aldo", "Lopez", "1992-09-28", 47714976);
 INSERT INTO Persona (PersonaID,EntidadID,Nombre,Apellido,FechaNacimiento,DNI)
 VALUES (2,2, "Gary", "Calle", "1111-11-11", 1111111);
 INSERT INTO Persona (PersonaID,EntidadID,Nombre,Apellido,FechaNacimiento,DNI)
-VALUES (3,3, "Enrique", "Lanchipa", "2222-02-02", 2222222);
+VALUES (3,3, "Enrique", "Lanchipa Valencia", "2222-02-02", 2222222);
 INSERT INTO Persona (PersonaID,EntidadID,Nombre,Apellido,FechaNacimiento,DNI)
 VALUES (4,4, "Miguel", "Fernandez", "3333-03-03", 33333333);
 INSERT INTO Persona (PersonaID,EntidadID,Nombre,Apellido,FechaNacimiento,DNI)
@@ -40,6 +50,16 @@ INSERT INTO Persona (PersonaID,EntidadID,Nombre,Apellido,FechaNacimiento,DNI)
 VALUES (6,6, "Alberto", "Flor", "4444-04-04", 55555555);
 INSERT INTO Persona (PersonaID,EntidadID,Nombre,Apellido,FechaNacimiento,DNI)
 VALUES (7,7, "Henry", "Chaina", "5555-05-05", 66666666);
+INSERT INTO Persona (PersonaID,EntidadID,Nombre,Apellido,FechaNacimiento,DNI)
+VALUES (8,8, "Patrick", "Cuadros Rodriguez", "1124-02-02", 2222222);
+INSERT INTO Persona (PersonaID,EntidadID,Nombre,Apellido,FechaNacimiento,DNI)
+VALUES (9,9, "Liliana", "Vega", "2221-03-03", 33333333);
+INSERT INTO Persona (PersonaID,EntidadID,Nombre,Apellido,FechaNacimiento,DNI)
+VALUES (10,10, "Martin", "Alcantara", "1111-02-03", 44444444);
+INSERT INTO Persona (PersonaID,EntidadID,Nombre,Apellido,FechaNacimiento,DNI)
+VALUES (11,11, "Tito", "Ale Nieto", "1899-05-12", 55555555);
+INSERT INTO Persona (PersonaID,EntidadID,Nombre,Apellido,FechaNacimiento,DNI)
+VALUES (12,12, "Martha", "Paredes Vignola", "2000-09-28", 99999999);
 SELECT*FROM Persona;
 
 
@@ -103,6 +123,16 @@ INSERT INTO Docente (DocenteID,EscuelaID,Titulo)
 VALUES (6,1, "PSD");
 INSERT INTO Docente (DocenteID,EscuelaID,Titulo)
 VALUES (7,1, "Maestro");
+INSERT INTO Docente (DocenteID,EscuelaID,Titulo)
+VALUES (8,1, "Doctor");
+INSERT INTO Docente (DocenteID,EscuelaID,Titulo)
+VALUES (9,1, "Maestro");
+INSERT INTO Docente (DocenteID,EscuelaID,Titulo)
+VALUES (10,1, "Maestro");
+INSERT INTO Docente (DocenteID,EscuelaID,Titulo)
+VALUES (11,1, "Maestro");
+INSERT INTO Docente (DocenteID,EscuelaID,Titulo)
+VALUES (12,1, "Doctor");
 SELECT*FROM Docente;
 
 
@@ -128,6 +158,18 @@ INSERT INTO EspecialidadDocente (EspecialidadDocenteID,DocenteID,EspecialidadID)
 VALUES (5,6,4);
 INSERT INTO EspecialidadDocente (EspecialidadDocenteID,DocenteID,EspecialidadID)
 VALUES (6,7,3);
+INSERT INTO EspecialidadDocente (EspecialidadDocenteID,DocenteID,EspecialidadID)
+VALUES (7,3,2);
+INSERT INTO EspecialidadDocente (EspecialidadDocenteID,DocenteID,EspecialidadID)
+VALUES (8,8,1);
+INSERT INTO EspecialidadDocente (EspecialidadDocenteID,DocenteID,EspecialidadID)
+VALUES (9,9,1);
+INSERT INTO EspecialidadDocente (EspecialidadDocenteID,DocenteID,EspecialidadID)
+VALUES (10,10,2);
+INSERT INTO EspecialidadDocente (EspecialidadDocenteID,DocenteID,EspecialidadID)
+VALUES (11,11,2);
+INSERT INTO EspecialidadDocente (EspecialidadDocenteID,DocenteID,EspecialidadID)
+VALUES (12,12,1);
 SELECT*FROM EspecialidadDocente;
 
 

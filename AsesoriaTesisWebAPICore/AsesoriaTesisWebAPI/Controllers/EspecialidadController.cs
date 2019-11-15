@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AsesoriaTesisWebAPI.Models;
+using AsesoriaTesisWebAPI.DTOs;
 
 namespace AsesoriaTesisWebAPI.Controllers
 {
@@ -20,12 +21,45 @@ namespace AsesoriaTesisWebAPI.Controllers
             _context = context;
         }
 
+        [HttpGet]
+        public List<Especialidad> Get()
+        {
+            var especialidades = (from es in _context.Especialidad
+                               join esdo in _context.Especialidaddocente on es.EspecialidadId equals esdo.EspecialidadId
+                               join doc in _context.Docente on esdo.DocenteId equals doc.DocenteId
+                               select new EspecialidadDTO()
+                               {
+                                   Nombre = en.Nombre,
+                                   Comentario = en.Comentario,
+                                   NumeroOrden = en.NumeroOrden,
+                                   FechaAprobado = en.FechaAprobado,
+                                   EntregablemedallaRelacional = new EntregablemedallaDTO()
+                                   {
+                                       //EntregableMedallaId = enme.EntregableMedallaId,
+                                       EntregableId = enme.EntregableId,
+                                       MedallaId = enme.MedallaId,
+                                       Fecha = enme.Fecha,
+                                       MedallaRelacional = new MedallaDTO()
+                                       {
+                                           //MedallaId = me.MedallaId,
+                                           Nombre = me.Nombre,
+                                           ImagenUrl = me.ImagenUrl,
+                                           Descripcion = me.Descripcion,
+                                       }
+                                   }
+                               }).ToList();
+            return especialidades;
+        }
+
+
+
+        /*
         // GET: api/Especialidad
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Especialidad>>> GetEspecialidad()
         {
             return await _context.Especialidad.ToListAsync();
-        }
+        }*/
 
         // GET: api/Especialidad/5
         [HttpGet("{id}")]

@@ -4,10 +4,10 @@
     
     <mat-tab label="Sistmas Cognitivos"> 
         <mat-toolbar>a) Procesamiento digital de señales</mat-toolbar>
-        <mat-grid-list cols = "4"  rowHeight = "fit">
+        <mat-grid-list cols = "3"  rowHeight = "fit">
                 <mat-grid-tile *ngFor="let docente of docentes">
                     <img src="../../../../../assets/avatarflor.png" alt="">
-                    <mat-card>{{docente.docenteId}}</mat-card>
+                    <mat-card>{{docente.docenteApellido}},{{docente.docenteNombre}}</mat-card>
                 </mat-grid-tile>                   
             </mat-grid-list>    
         <mat-toolbar> b) Sistemas inteligentes</mat-toolbar>

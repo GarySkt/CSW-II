@@ -1,6 +1,8 @@
 export interface Docente{
    
         docenteId: number;
+        docenteNombre: string;
+        docenteApellido: string;
         escuelaId : number;
         titulo: string;
         especialidadDocente: any[];

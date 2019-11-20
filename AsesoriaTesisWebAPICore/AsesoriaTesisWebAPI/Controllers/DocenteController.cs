@@ -150,7 +150,7 @@ namespace AsesoriaTesisWebAPI.Controllers
         /// <param name="idLineaInvestigacion">ID de la Linea de Investigacion</param>
         /// <returns>Lista de Docentes</returns>
         [HttpGet]
-        [Route("[action]/{idEspecialidad}")]
+        [Route("[action]/{idLineaInvestigacion}")]
         public async Task<ActionResult<IEnumerable<DocenteLineaInvestigacion>>> GetLineaInvestigacionDocente(int idLineaInvestigacion)
         {
             var docente = await docenteDA.GetLineaInvestigacionDocente(idLineaInvestigacion);

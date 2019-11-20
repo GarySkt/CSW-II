@@ -1,0 +1,11 @@
+﻿CUSTOM MODELS:
+
+Conocido como Entity, DTL, Data TransferObject DTO, etc.
+-------------------------------------------------------------
+
+Aquí deben ir las clases personalizadas con sus respectivos atributos que
+serviran para trasladar datos.
+
+Se puede agregar "DT" al final para que no se confunda con los modelos.
+
+Atte. Kevin.

@@ -22,11 +22,11 @@ namespace AsesoriaTesisWebAPI.DataAccess
 
         //Metodo
         /// <summary>
-        /// Método que lista las especialidades de un determinado docente
+        /// Método que lista las lineas de investigacion de un determinado docente
         /// </summary>
         /// <param name="idDocente">ID de Docente</param>
-        /// <returns>lista de especialidades</returns>
-        public async Task<ActionResult<IEnumerable<DocenteLineaInvestigacion>>> GetDocenteEspecialidad(int idDocente)
+        /// <returns>lista de lineas de investigacion</returns>
+        public async Task<ActionResult<IEnumerable<DocenteLineaInvestigacion>>> GetDocenteLineaInvestigacion(int idDocente)
         {
             List<DocenteLineaInvestigacion> listaDocente = new List<DocenteLineaInvestigacion>();
             var listarEspecialidad = await dbContext.LineaInvestigacionDocente
@@ -51,11 +51,11 @@ namespace AsesoriaTesisWebAPI.DataAccess
         }
 
         /// <summary>
-        /// Método que lista los docentes de una determinada especialidad
+        /// Método que lista los docentes de una determinada linea de investigacion
         /// </summary>
-        /// <param name="idEspecialidad">ID de Especialidad</param>
+        /// <param name="idLineaInvestigacion">ID de Linea de Ingestigacion</param>
         /// <returns>lista de docentes</returns>
-        public async Task<ActionResult<IEnumerable<DocenteLineaInvestigacion>>> GetEspecialidadDocente(int idEspecialidad)
+        public async Task<ActionResult<IEnumerable<DocenteLineaInvestigacion>>> GetLineaInvestigacionDocente(int idLineaInvestigacion)
         {
             List<DocenteLineaInvestigacion> listaDocente = new List<DocenteLineaInvestigacion>();
 
@@ -64,7 +64,7 @@ namespace AsesoriaTesisWebAPI.DataAccess
                                        join en in dbContext.Entidad on d.DocenteId equals en.EntidadId
                                        join p in dbContext.Persona on en.EntidadId equals p.EntidadId
                                        join e in dbContext.Escuela on en.EscuelaId equals e.EscuelaId
-                                       where ed.LineaInvestigacionId == idEspecialidad
+                                       where ed.LineaInvestigacionId == idLineaInvestigacion
                                        select new DocenteLineaInvestigacion
                                        {
                                            DocenteID = d.DocenteId,

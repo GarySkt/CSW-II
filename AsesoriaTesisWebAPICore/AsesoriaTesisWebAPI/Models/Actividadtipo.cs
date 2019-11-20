@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace AsesoriaTesisWebAPI.Models
 {
-    public partial class Actividadtipo
+    public partial class ActividadTipo
     {
-        public Actividadtipo()
+        public ActividadTipo()
         {
             Actividad = new HashSet<Actividad>();
         }
@@ -14,6 +14,6 @@ namespace AsesoriaTesisWebAPI.Models
         public string Nombre { get; set; }
         public int CreditoRequerido { get; set; }
 
-        public ICollection<Actividad> Actividad { get; set; }
+        public virtual ICollection<Actividad> Actividad { get; set; }
     }
 }

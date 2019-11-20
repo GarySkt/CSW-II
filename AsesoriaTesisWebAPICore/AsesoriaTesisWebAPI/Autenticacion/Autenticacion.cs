@@ -21,7 +21,7 @@ namespace AsesoriaTesisWebAPI.Autenticacion
         /// Variable IConfiguration de solo lectura
         /// </summary>
         private readonly IConfiguration configuration;
-        private PostDbContext contextoBaseDatos;
+        private TutoriaContext contextoBaseDatos;
         /// <summary>
         /// Constructor de la clase
         /// </summary>
@@ -30,7 +30,7 @@ namespace AsesoriaTesisWebAPI.Autenticacion
         public Autenticacion(IConfiguration configurationParameter)
         {
             configuration = configurationParameter;
-            contextoBaseDatos = new PostDbContext();
+            contextoBaseDatos = new TutoriaContext();
         }
         /// <summary>
         /// Metodo que autentica el usuario con la base de datos

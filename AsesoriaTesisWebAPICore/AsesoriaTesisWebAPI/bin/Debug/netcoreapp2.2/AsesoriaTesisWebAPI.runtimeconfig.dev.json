@@ -1,9 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "/home/r3d/.dotnet/store/|arch|/|tfm|",
-      "/home/r3d/.nuget/packages",
-      "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+      "C:\\Users\\MDOV\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\MDOV\\.nuget\\packages"
     ]
   }
 }

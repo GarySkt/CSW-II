@@ -7,7 +7,7 @@ namespace AsesoriaTesisWebAPI.Models
     {
         public Medalla()
         {
-            Entregablemedalla = new HashSet<Entregablemedalla>();
+            EntregableMedalla = new HashSet<EntregableMedalla>();
         }
 
         public int MedallaId { get; set; }
@@ -16,7 +16,7 @@ namespace AsesoriaTesisWebAPI.Models
         public int MedallaTipoId { get; set; }
         public string Descripcion { get; set; }
 
-        public virtual Medallatipo MedallaTipo { get; set; }
-        public virtual ICollection<Entregablemedalla> Entregablemedalla { get; set; }
+        public virtual MedallaTipo MedallaTipo { get; set; }
+        public virtual ICollection<EntregableMedalla> EntregableMedalla { get; set; }
     }
 }

@@ -13,9 +13,9 @@ namespace AsesoriaTesisWebAPI.Controllers
     [ApiController]
     public class PersonaController : ControllerBase
     {
-        private readonly PostDbContext _context;
+        private readonly TutoriaContext _context;
 
-        public PersonaController(PostDbContext context)
+        public PersonaController(TutoriaContext context)
         {
             _context = context;
         }

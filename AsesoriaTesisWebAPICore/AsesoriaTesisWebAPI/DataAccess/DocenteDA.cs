@@ -3,20 +3,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using AsesoriaTesisWebAPI.Models;
-using AsesoriaTesisWebAPI.Entity;
+
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using AsesoriaTesisWebAPI.CustomModels;
 
 namespace AsesoriaTesisWebAPI.DataAccess
 {
     public class DocenteDA 
     {
         
-        private readonly PostDbContext dbContext;
+        private readonly TutoriaContext dbContext;
 
         public DocenteDA()
         {
-            dbContext = new PostDbContext();
+            dbContext = new TutoriaContext();
         }
 
         //Metodo
@@ -25,24 +26,24 @@ namespace AsesoriaTesisWebAPI.DataAccess
         /// </summary>
         /// <param name="idDocente">ID de Docente</param>
         /// <returns>lista de especialidades</returns>
-        public async Task<ActionResult<IEnumerable<DocenteEspecialidad>>> GetDocenteEspecialidad(int idDocente)
+        public async Task<ActionResult<IEnumerable<DocenteLineaInvestigacion>>> GetDocenteEspecialidad(int idDocente)
         {
-            List<DocenteEspecialidad> listaDocente = new List<DocenteEspecialidad>();
-            var listarEspecialidad = await dbContext.Especialidaddocente
-                .Include(e => e.Especialidad)
+            List<DocenteLineaInvestigacion> listaDocente = new List<DocenteLineaInvestigacion>();
+            var listarEspecialidad = await dbContext.LineaInvestigacionDocente
+                .Include(e => e.LineaInvestigacion)
                 .Where(e => e.DocenteId.Equals(idDocente))
                 .ToListAsync();
 
             foreach (var lista in listarEspecialidad)
             {
-                DocenteEspecialidad docenteEspecialidad = new DocenteEspecialidad()
+                DocenteLineaInvestigacion docenteLineaInvestigacion = new DocenteLineaInvestigacion()
                 {
                     DocenteID = lista.DocenteId,
-                    EspecialidadID = lista.EspecialidadId,
-                    EspecialidadNombre = lista.Especialidad.Nombre
+                    LineaInvestigacionID = lista.LineaInvestigacionId,
+                    LineaNombre = lista.LineaInvestigacion.Nombre
                 };
 
-                listaDocente.Add(docenteEspecialidad);
+                listaDocente.Add(docenteLineaInvestigacion);
             }
 
             return listaDocente;
@@ -54,17 +55,17 @@ namespace AsesoriaTesisWebAPI.DataAccess
         /// </summary>
         /// <param name="idEspecialidad">ID de Especialidad</param>
         /// <returns>lista de docentes</returns>
-        public async Task<ActionResult<IEnumerable<DocenteEspecialidad>>> GetEspecialidadDocente(int idEspecialidad)
+        public async Task<ActionResult<IEnumerable<DocenteLineaInvestigacion>>> GetEspecialidadDocente(int idEspecialidad)
         {
-            List<DocenteEspecialidad> listaDocente = new List<DocenteEspecialidad>();
+            List<DocenteLineaInvestigacion> listaDocente = new List<DocenteLineaInvestigacion>();
 
-            var listarDocente = await (from ed in dbContext.Especialidaddocente
-                                       join d in dbContext.Docente on ed.DocenteId equals d.DocenteId
-                                       join e in dbContext.Escuela on d.EscuelaId equals e.EscuelaId
+            var listarDocente = await (from ed in dbContext.LineaInvestigacionDocente
+                                       join d in dbContext.Docente on ed.DocenteId equals d.DocenteId                                       
                                        join en in dbContext.Entidad on d.DocenteId equals en.EntidadId
                                        join p in dbContext.Persona on en.EntidadId equals p.EntidadId
-                                       where ed.EspecialidadId == idEspecialidad
-                                       select new DocenteEspecialidad
+                                       join e in dbContext.Escuela on en.EscuelaId equals e.EscuelaId
+                                       where ed.LineaInvestigacionId == idEspecialidad
+                                       select new DocenteLineaInvestigacion
                                        {
                                            DocenteID = d.DocenteId,
                                            DocenteNombre = p.Nombre,
@@ -75,7 +76,7 @@ namespace AsesoriaTesisWebAPI.DataAccess
 
             foreach (var lista in listarDocente)
             {
-                DocenteEspecialidad docenteEspecialidad = new DocenteEspecialidad()
+                DocenteLineaInvestigacion docenteEspecialidad = new DocenteLineaInvestigacion()
                 {
                     DocenteID = lista.DocenteID,
                     DocenteNombre = lista.DocenteNombre,

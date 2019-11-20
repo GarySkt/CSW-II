@@ -13,9 +13,9 @@ namespace AsesoriaTesisWebAPI.Controllers
     [ApiController]
     public class AsesorController : ControllerBase
     {
-        private readonly PostDbContext _context;
+        private readonly TutoriaContext _context;
 
-        public AsesorController(PostDbContext context)
+        public AsesorController(TutoriaContext context)
         {
             _context = context;
         }

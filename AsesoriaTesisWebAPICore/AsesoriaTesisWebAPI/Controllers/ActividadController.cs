@@ -13,9 +13,9 @@ namespace AsesoriaTesisWebAPI.Controllers
     [ApiController]
     public class ActividadController : ControllerBase
     {
-        private readonly PostDbContext _context;
+        private readonly TutoriaContext _context;
 
-        public ActividadController(PostDbContext context)
+        public ActividadController(TutoriaContext context)
         {
             _context = context;
         }

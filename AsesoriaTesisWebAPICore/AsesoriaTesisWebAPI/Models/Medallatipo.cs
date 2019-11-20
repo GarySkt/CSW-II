@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace AsesoriaTesisWebAPI.Models
 {
-    public partial class Medallatipo
+    public partial class MedallaTipo
     {
-        public Medallatipo()
+        public MedallaTipo()
         {
             Medalla = new HashSet<Medalla>();
         }

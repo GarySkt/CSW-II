@@ -11,46 +11,46 @@ namespace AsesoriaTesisWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EntidadcicloController : ControllerBase
+    public class EntidadCicloController : ControllerBase
     {
-        private readonly PostDbContext _context;
+        private readonly TutoriaContext _context;
 
-        public EntidadcicloController(PostDbContext context)
+        public EntidadCicloController(TutoriaContext context)
         {
             _context = context;
         }
 
-        // GET: api/Entidadciclo
+        // GET: api/EntidadCiclo
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Entidadciclo>>> GetEntidadciclo()
+        public async Task<ActionResult<IEnumerable<EntidadCiclo>>> GetEntidadCiclo()
         {
-            return await _context.Entidadciclo.ToListAsync();
+            return await _context.EntidadCiclo.ToListAsync();
         }
 
-        // GET: api/Entidadciclo/5
+        // GET: api/EntidadCiclo/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Entidadciclo>> GetEntidadciclo(int id)
+        public async Task<ActionResult<EntidadCiclo>> GetEntidadCiclo(int id)
         {
-            var entidadciclo = await _context.Entidadciclo.FindAsync(id);
+            var entidadCiclo = await _context.EntidadCiclo.FindAsync(id);
 
-            if (entidadciclo == null)
+            if (entidadCiclo == null)
             {
                 return NotFound();
             }
 
-            return entidadciclo;
+            return entidadCiclo;
         }
 
-        // PUT: api/Entidadciclo/5
+        // PUT: api/EntidadCiclo/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutEntidadciclo(int id, Entidadciclo entidadciclo)
+        public async Task<IActionResult> PutEntidadCiclo(int id, EntidadCiclo entidadCiclo)
         {
-            if (id != entidadciclo.EntidadCicloId)
+            if (id != entidadCiclo.EntidadCicloId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(entidadciclo).State = EntityState.Modified;
+            _context.Entry(entidadCiclo).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace AsesoriaTesisWebAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EntidadcicloExists(id))
+                if (!EntidadCicloExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace AsesoriaTesisWebAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Entidadciclo
+        // POST: api/EntidadCiclo
         [HttpPost]
-        public async Task<ActionResult<Entidadciclo>> PostEntidadciclo(Entidadciclo entidadciclo)
+        public async Task<ActionResult<EntidadCiclo>> PostEntidadCiclo(EntidadCiclo entidadCiclo)
         {
-            _context.Entidadciclo.Add(entidadciclo);
+            _context.EntidadCiclo.Add(entidadCiclo);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetEntidadciclo", new { id = entidadciclo.EntidadCicloId }, entidadciclo);
+            return CreatedAtAction("GetEntidadCiclo", new { id = entidadCiclo.EntidadCicloId }, entidadCiclo);
         }
 
-        // DELETE: api/Entidadciclo/5
+        // DELETE: api/EntidadCiclo/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Entidadciclo>> DeleteEntidadciclo(int id)
+        public async Task<ActionResult<EntidadCiclo>> DeleteEntidadCiclo(int id)
         {
-            var entidadciclo = await _context.Entidadciclo.FindAsync(id);
-            if (entidadciclo == null)
+            var entidadCiclo = await _context.EntidadCiclo.FindAsync(id);
+            if (entidadCiclo == null)
             {
                 return NotFound();
             }
 
-            _context.Entidadciclo.Remove(entidadciclo);
+            _context.EntidadCiclo.Remove(entidadCiclo);
             await _context.SaveChangesAsync();
 
-            return entidadciclo;
+            return entidadCiclo;
         }
 
-        private bool EntidadcicloExists(int id)
+        private bool EntidadCicloExists(int id)
         {
-            return _context.Entidadciclo.Any(e => e.EntidadCicloId == id);
+            return _context.EntidadCiclo.Any(e => e.EntidadCicloId == id);
         }
     }
 }

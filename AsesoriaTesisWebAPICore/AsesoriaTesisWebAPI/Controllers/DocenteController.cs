@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AsesoriaTesisWebAPI.Models;
 using AsesoriaTesisWebAPI.DataAccess;
-using AsesoriaTesisWebAPI.Entity;
 
 namespace AsesoriaTesisWebAPI.Controllers
 {
@@ -15,10 +14,10 @@ namespace AsesoriaTesisWebAPI.Controllers
     [ApiController]
     public class DocenteController : ControllerBase
     {
-        private readonly PostDbContext _context;
+        private readonly TutoriaContext _context;
         private DocenteDA docenteDA;
 
-        public DocenteController(PostDbContext context)
+        public DocenteController(TutoriaContext context)
         {
             _context = context;
             docenteDA = new DocenteDA();
@@ -28,10 +27,7 @@ namespace AsesoriaTesisWebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Docente>>> GetDocente()
         {
-            return await _context.Docente
-                .Include(d=> d.Asesor)
-                .Include(d => d.Escuela)
-                .ToListAsync();
+            return await _context.Docente.ToListAsync();
         }
 
         // GET: api/Docente/5
@@ -39,36 +35,6 @@ namespace AsesoriaTesisWebAPI.Controllers
         public async Task<ActionResult<Docente>> GetDocente(int id)
         {
             var docente = await _context.Docente.FindAsync(id);
-
-            if (docente == null)
-            {
-                return NotFound();
-            }
-
-            return docente;
-        }
-
-        // GET: api/Docente/GetDocenteEspecialidad/1
-        [HttpGet]
-        [Route("[action]/{idDocente}")]
-        public async Task<ActionResult<IEnumerable<DocenteEspecialidad>>> GetDocenteEspecialidad(int idDocente)
-        {
-            var docente = await docenteDA.GetDocenteEspecialidad(idDocente);
-
-            if (docente == null)
-            {
-                return NotFound();
-            }
-
-            return docente;
-        }
-
-        // GET: api/Docente/GetEspecialidadDocente/1
-        [HttpGet]
-        [Route("[action]/{idEspecialidad}")]
-        public async Task<ActionResult<IEnumerable<DocenteEspecialidad>>> GetEspecialidadDocente(int idEspecialidad)
-        {
-            var docente = await docenteDA.GetEspecialidadDocente(idEspecialidad);
 
             if (docente == null)
             {
@@ -107,7 +73,6 @@ namespace AsesoriaTesisWebAPI.Controllers
 
             return NoContent();
         }
-               
 
         // POST: api/Docente
         [HttpPost]
@@ -153,5 +118,11 @@ namespace AsesoriaTesisWebAPI.Controllers
         {
             return _context.Docente.Any(e => e.DocenteId == id);
         }
+
+        /////// METODOS AGREGADOS ///////
+
+
+       
+
     }
 }

@@ -13,9 +13,9 @@ namespace AsesoriaTesisWebAPI.Controllers
     [ApiController]
     public class EntidadController : ControllerBase
     {
-        private readonly PostDbContext _context;
+        private readonly TutoriaContext _context;
 
-        public EntidadController(PostDbContext context)
+        public EntidadController(TutoriaContext context)
         {
             _context = context;
         }
@@ -24,9 +24,7 @@ namespace AsesoriaTesisWebAPI.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Entidad>>> GetEntidad()
         {
-            return await _context.Entidad
-                
-            .ToListAsync();
+            return await _context.Entidad.ToListAsync();
         }
 
         // GET: api/Entidad/5

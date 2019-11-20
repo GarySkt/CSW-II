@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AsesoriaTesisWebAPI.Models
 {
-    public partial class Entidadciclo
+    public partial class EntidadCiclo
     {
         public int EntidadCicloId { get; set; }
         public int EntidadId { get; set; }

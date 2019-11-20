@@ -7,16 +7,14 @@ namespace AsesoriaTesisWebAPI.Models
     {
         public Docente()
         {
-            Especialidaddocente = new HashSet<Especialidaddocente>();
+            LineaInvestigacionDocente = new HashSet<LineaInvestigacionDocente>();
         }
 
         public int DocenteId { get; set; }
-        public int EscuelaId { get; set; }
         public string Titulo { get; set; }
 
         public virtual Entidad DocenteNavigation { get; set; }
-        public virtual Escuela Escuela { get; set; }
         public virtual Asesor Asesor { get; set; }
-        public virtual ICollection<Especialidaddocente> Especialidaddocente { get; set; }
+        public virtual ICollection<LineaInvestigacionDocente> LineaInvestigacionDocente { get; set; }
     }
 }

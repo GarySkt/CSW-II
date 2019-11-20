@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AsesoriaTesisWebAPI.Models;
 using AsesoriaTesisWebAPI.DataAccess;
+using AsesoriaTesisWebAPI.CustomModels;
 
 namespace AsesoriaTesisWebAPI.Controllers
 {
@@ -121,8 +122,48 @@ namespace AsesoriaTesisWebAPI.Controllers
 
         /////// METODOS AGREGADOS ///////
 
+        /// <summary>
+        /// Obtienea las lineas de investigacion de un determinado docente 
+        /// GET: api/Docente/GetDocenteLineaInvestigacion/1
+        /// </summary>
+        /// <param name="idDocente"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("[action]/{idDocente}")]
+        public async Task<ActionResult<IEnumerable<DocenteLineaInvestigacion>>> GetDocenteLineaInvestigacion(int idDocente)
+        {
+            var docente = await docenteDA.GetDocenteLineaInvestigacion(idDocente);
 
-       
+            if (docente == null)
+            {
+                return NotFound();
+            }
+
+            return docente;
+        }
+
+
+        /// <summary>
+        /// Obtiene los docentes de una determinada linea de investigacion
+        /// GET: api/Docente/GetLineaInvestigacionDocente/1
+        /// </summary>
+        /// <param name="idLineaInvestigacion">ID de la Linea de Investigacion</param>
+        /// <returns>Lista de Docentes</returns>
+        [HttpGet]
+        [Route("[action]/{idEspecialidad}")]
+        public async Task<ActionResult<IEnumerable<DocenteLineaInvestigacion>>> GetLineaInvestigacionDocente(int idLineaInvestigacion)
+        {
+            var docente = await docenteDA.GetLineaInvestigacionDocente(idLineaInvestigacion);
+
+            if (docente == null)
+            {
+                return NotFound();
+            }
+
+            return docente;
+        }
+
+
 
     }
 }

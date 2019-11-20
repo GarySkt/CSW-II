@@ -7,8 +7,7 @@ namespace AsesoriaTesisWebAPI.Models
     {
         public Escuela()
         {
-            Alumno = new HashSet<Alumno>();
-            Docente = new HashSet<Docente>();
+            Entidad = new HashSet<Entidad>();
         }
 
         public int EscuelaId { get; set; }
@@ -17,7 +16,6 @@ namespace AsesoriaTesisWebAPI.Models
         public int FacultadId { get; set; }
 
         public virtual Facultad Facultad { get; set; }
-        public virtual ICollection<Alumno> Alumno { get; set; }
-        public virtual ICollection<Docente> Docente { get; set; }
+        public virtual ICollection<Entidad> Entidad { get; set; }
     }
 }

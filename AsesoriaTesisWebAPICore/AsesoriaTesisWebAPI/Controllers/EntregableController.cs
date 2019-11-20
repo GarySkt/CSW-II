@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using AsesoriaTesisWebAPI.DTOs;
 using AsesoriaTesisWebAPI.Models;
 
 namespace AsesoriaTesisWebAPI.Controllers
@@ -14,51 +13,19 @@ namespace AsesoriaTesisWebAPI.Controllers
     [ApiController]
     public class EntregableController : ControllerBase
     {
-        private readonly PostDbContext _context;
+        private readonly TutoriaContext _context;
 
-        public EntregableController(PostDbContext context)
+        public EntregableController(TutoriaContext context)
         {
             _context = context;
         }
 
-
-        [HttpGet]
-        public List<EntregableDTO> Get()
-        {
-            var entregables = (from en in _context.Entregable
-                               join enme in _context.Entregablemedalla on en.EntregableId equals enme.EntregableId
-                               join me in _context.Medalla on enme.MedallaId equals me.MedallaId
-                               select new EntregableDTO()
-                            {
-                                Descripcion= en.Descripcion,
-                                Comentario= en.Comentario,
-                                NumeroOrden = en.NumeroOrden,
-                                FechaAprobado = en.FechaAprobado,
-                                EntregablemedallaRelacional = new EntregablemedallaDTO()
-                                {
-                                    //EntregableMedallaId = enme.EntregableMedallaId,
-                                    EntregableId= enme.EntregableId,
-                                    MedallaId = enme.MedallaId,
-                                    Fecha = enme.Fecha,
-                                    MedallaRelacional = new MedallaDTO()
-                                    {
-                                        //MedallaId = me.MedallaId,
-                                        Nombre = me.Nombre,
-                                        ImagenUrl = me.ImagenUrl,
-                                        Descripcion = me.Descripcion,
-                                    }
-                                }
-                            }).ToList();
-            return entregables;
-        }
-
-        /*
         // GET: api/Entregable
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Entregable>>> GetEntregable()
         {
             return await _context.Entregable.ToListAsync();
-        }*/
+        }
 
         // GET: api/Entregable/5
         [HttpGet("{id}")]

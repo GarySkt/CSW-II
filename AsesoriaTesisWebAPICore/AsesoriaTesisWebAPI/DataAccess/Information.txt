@@ -1,0 +1,11 @@
+﻿DATA ACCESS:
+
+Conocido como DataAccessLayer DAL, DataAccessObject DAO, etc.
+-------------------------------------------------------------
+
+Aquí deben ir netamente las consultas echas a la base de datos.
+Estas consultas serán consumidas por los controladores.
+
+Se agrega "DA" al final para que no se confunda con los modelos.
+
+Atte. Kevin.

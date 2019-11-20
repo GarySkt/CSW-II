@@ -19,7 +19,7 @@ namespace AsesoriaTesisWebAPI.Models
         public int AsesorId { get; set; }
         public int ActividadTipoId { get; set; }
 
-        public virtual Actividadtipo ActividadTipo { get; set; }
+        public virtual ActividadTipo ActividadTipo { get; set; }
         public virtual Alumno Alumno { get; set; }
         public virtual Asesor Asesor { get; set; }
         public virtual ICollection<Entregable> Entregable { get; set; }

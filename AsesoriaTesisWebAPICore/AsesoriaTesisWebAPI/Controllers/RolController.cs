@@ -13,9 +13,9 @@ namespace AsesoriaTesisWebAPI.Controllers
     [ApiController]
     public class RolController : ControllerBase
     {
-        private readonly PostDbContext _context;
+        private readonly TutoriaContext _context;
 
-        public RolController(PostDbContext context)
+        public RolController(TutoriaContext context)
         {
             _context = context;
         }

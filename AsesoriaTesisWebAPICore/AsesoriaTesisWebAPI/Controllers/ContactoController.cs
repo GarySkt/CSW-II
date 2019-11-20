@@ -13,9 +13,9 @@ namespace AsesoriaTesisWebAPI.Controllers
     [ApiController]
     public class ContactoController : ControllerBase
     {
-        private readonly PostDbContext _context;
+        private readonly TutoriaContext _context;
 
-        public ContactoController(PostDbContext context)
+        public ContactoController(TutoriaContext context)
         {
             _context = context;
         }

@@ -7,8 +7,8 @@ namespace AsesoriaTesisWebAPI.Models
     {
         public Entregable()
         {
-            Entregablehistoria = new HashSet<Entregablehistoria>();
-            Entregablemedalla = new HashSet<Entregablemedalla>();
+            EntregableHistoria = new HashSet<EntregableHistoria>();
+            EntregableMedalla = new HashSet<EntregableMedalla>();
         }
 
         public int EntregableId { get; set; }
@@ -19,7 +19,7 @@ namespace AsesoriaTesisWebAPI.Models
         public DateTime FechaAprobado { get; set; }
 
         public virtual Actividad Actividad { get; set; }
-        public virtual ICollection<Entregablehistoria> Entregablehistoria { get; set; }
-        public virtual ICollection<Entregablemedalla> Entregablemedalla { get; set; }
+        public virtual ICollection<EntregableHistoria> EntregableHistoria { get; set; }
+        public virtual ICollection<EntregableMedalla> EntregableMedalla { get; set; }
     }
 }

@@ -13,9 +13,9 @@ namespace AsesoriaTesisWebAPI.Controllers
     [ApiController]
     public class FacultadController : ControllerBase
     {
-        private readonly PostDbContext _context;
+        private readonly TutoriaContext _context;
 
-        public FacultadController(PostDbContext context)
+        public FacultadController(TutoriaContext context)
         {
             _context = context;
         }

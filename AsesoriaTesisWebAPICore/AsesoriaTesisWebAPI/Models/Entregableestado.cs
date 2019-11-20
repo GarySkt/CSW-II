@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace AsesoriaTesisWebAPI.Models
 {
-    public partial class Entregableestado
+    public partial class EntregableEstado
     {
-        public Entregableestado()
+        public EntregableEstado()
         {
-            Entregablehistoria = new HashSet<Entregablehistoria>();
+            EntregableHistoria = new HashSet<EntregableHistoria>();
         }
 
         public int EntregableEstadoId { get; set; }
@@ -17,6 +17,6 @@ namespace AsesoriaTesisWebAPI.Models
         public string ComentarioDocente { get; set; }
         public int Estado { get; set; }
 
-        public virtual ICollection<Entregablehistoria> Entregablehistoria { get; set; }
+        public virtual ICollection<EntregableHistoria> EntregableHistoria { get; set; }
     }
 }

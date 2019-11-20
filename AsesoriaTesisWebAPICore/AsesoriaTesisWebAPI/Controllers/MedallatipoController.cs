@@ -11,46 +11,46 @@ namespace AsesoriaTesisWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class MedallatipoController : ControllerBase
+    public class MedallaTipoController : ControllerBase
     {
-        private readonly PostDbContext _context;
+        private readonly TutoriaContext _context;
 
-        public MedallatipoController(PostDbContext context)
+        public MedallaTipoController(TutoriaContext context)
         {
             _context = context;
         }
 
-        // GET: api/Medallatipo
+        // GET: api/MedallaTipo
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Medallatipo>>> GetMedallatipo()
+        public async Task<ActionResult<IEnumerable<MedallaTipo>>> GetMedallaTipo()
         {
-            return await _context.Medallatipo.ToListAsync();
+            return await _context.MedallaTipo.ToListAsync();
         }
 
-        // GET: api/Medallatipo/5
+        // GET: api/MedallaTipo/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Medallatipo>> GetMedallatipo(int id)
+        public async Task<ActionResult<MedallaTipo>> GetMedallaTipo(int id)
         {
-            var medallatipo = await _context.Medallatipo.FindAsync(id);
+            var medallaTipo = await _context.MedallaTipo.FindAsync(id);
 
-            if (medallatipo == null)
+            if (medallaTipo == null)
             {
                 return NotFound();
             }
 
-            return medallatipo;
+            return medallaTipo;
         }
 
-        // PUT: api/Medallatipo/5
+        // PUT: api/MedallaTipo/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutMedallatipo(int id, Medallatipo medallatipo)
+        public async Task<IActionResult> PutMedallaTipo(int id, MedallaTipo medallaTipo)
         {
-            if (id != medallatipo.MedallaTipoId)
+            if (id != medallaTipo.MedallaTipoId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(medallatipo).State = EntityState.Modified;
+            _context.Entry(medallaTipo).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace AsesoriaTesisWebAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!MedallatipoExists(id))
+                if (!MedallaTipoExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace AsesoriaTesisWebAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Medallatipo
+        // POST: api/MedallaTipo
         [HttpPost]
-        public async Task<ActionResult<Medallatipo>> PostMedallatipo(Medallatipo medallatipo)
+        public async Task<ActionResult<MedallaTipo>> PostMedallaTipo(MedallaTipo medallaTipo)
         {
-            _context.Medallatipo.Add(medallatipo);
+            _context.MedallaTipo.Add(medallaTipo);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetMedallatipo", new { id = medallatipo.MedallaTipoId }, medallatipo);
+            return CreatedAtAction("GetMedallaTipo", new { id = medallaTipo.MedallaTipoId }, medallaTipo);
         }
 
-        // DELETE: api/Medallatipo/5
+        // DELETE: api/MedallaTipo/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Medallatipo>> DeleteMedallatipo(int id)
+        public async Task<ActionResult<MedallaTipo>> DeleteMedallaTipo(int id)
         {
-            var medallatipo = await _context.Medallatipo.FindAsync(id);
-            if (medallatipo == null)
+            var medallaTipo = await _context.MedallaTipo.FindAsync(id);
+            if (medallaTipo == null)
             {
                 return NotFound();
             }
 
-            _context.Medallatipo.Remove(medallatipo);
+            _context.MedallaTipo.Remove(medallaTipo);
             await _context.SaveChangesAsync();
 
-            return medallatipo;
+            return medallaTipo;
         }
 
-        private bool MedallatipoExists(int id)
+        private bool MedallaTipoExists(int id)
         {
-            return _context.Medallatipo.Any(e => e.MedallaTipoId == id);
+            return _context.MedallaTipo.Any(e => e.MedallaTipoId == id);
         }
     }
 }

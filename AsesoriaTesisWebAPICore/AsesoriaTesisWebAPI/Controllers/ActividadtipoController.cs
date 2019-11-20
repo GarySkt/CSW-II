@@ -11,46 +11,46 @@ namespace AsesoriaTesisWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ActividadtipoController : ControllerBase
+    public class ActividadTipoController : ControllerBase
     {
-        private readonly PostDbContext _context;
+        private readonly TutoriaContext _context;
 
-        public ActividadtipoController(PostDbContext context)
+        public ActividadTipoController(TutoriaContext context)
         {
             _context = context;
         }
 
-        // GET: api/Actividadtipo
+        // GET: api/ActividadTipo
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Actividadtipo>>> GetActividadtipo()
+        public async Task<ActionResult<IEnumerable<ActividadTipo>>> GetActividadTipo()
         {
-            return await _context.Actividadtipo.ToListAsync();
+            return await _context.ActividadTipo.ToListAsync();
         }
 
-        // GET: api/Actividadtipo/5
+        // GET: api/ActividadTipo/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Actividadtipo>> GetActividadtipo(int id)
+        public async Task<ActionResult<ActividadTipo>> GetActividadTipo(int id)
         {
-            var actividadtipo = await _context.Actividadtipo.FindAsync(id);
+            var actividadTipo = await _context.ActividadTipo.FindAsync(id);
 
-            if (actividadtipo == null)
+            if (actividadTipo == null)
             {
                 return NotFound();
             }
 
-            return actividadtipo;
+            return actividadTipo;
         }
 
-        // PUT: api/Actividadtipo/5
+        // PUT: api/ActividadTipo/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutActividadtipo(int id, Actividadtipo actividadtipo)
+        public async Task<IActionResult> PutActividadTipo(int id, ActividadTipo actividadTipo)
         {
-            if (id != actividadtipo.ActividadTipoId)
+            if (id != actividadTipo.ActividadTipoId)
             {
                 return BadRequest();
             }
 
-            _context.Entry(actividadtipo).State = EntityState.Modified;
+            _context.Entry(actividadTipo).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace AsesoriaTesisWebAPI.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ActividadtipoExists(id))
+                if (!ActividadTipoExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace AsesoriaTesisWebAPI.Controllers
             return NoContent();
         }
 
-        // POST: api/Actividadtipo
+        // POST: api/ActividadTipo
         [HttpPost]
-        public async Task<ActionResult<Actividadtipo>> PostActividadtipo(Actividadtipo actividadtipo)
+        public async Task<ActionResult<ActividadTipo>> PostActividadTipo(ActividadTipo actividadTipo)
         {
-            _context.Actividadtipo.Add(actividadtipo);
+            _context.ActividadTipo.Add(actividadTipo);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetActividadtipo", new { id = actividadtipo.ActividadTipoId }, actividadtipo);
+            return CreatedAtAction("GetActividadTipo", new { id = actividadTipo.ActividadTipoId }, actividadTipo);
         }
 
-        // DELETE: api/Actividadtipo/5
+        // DELETE: api/ActividadTipo/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Actividadtipo>> DeleteActividadtipo(int id)
+        public async Task<ActionResult<ActividadTipo>> DeleteActividadTipo(int id)
         {
-            var actividadtipo = await _context.Actividadtipo.FindAsync(id);
-            if (actividadtipo == null)
+            var actividadTipo = await _context.ActividadTipo.FindAsync(id);
+            if (actividadTipo == null)
             {
                 return NotFound();
             }
 
-            _context.Actividadtipo.Remove(actividadtipo);
+            _context.ActividadTipo.Remove(actividadTipo);
             await _context.SaveChangesAsync();
 
-            return actividadtipo;
+            return actividadTipo;
         }
 
-        private bool ActividadtipoExists(int id)
+        private bool ActividadTipoExists(int id)
         {
-            return _context.Actividadtipo.Any(e => e.ActividadTipoId == id);
+            return _context.ActividadTipo.Any(e => e.ActividadTipoId == id);
         }
     }
 }

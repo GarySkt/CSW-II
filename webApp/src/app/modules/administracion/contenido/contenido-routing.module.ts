@@ -12,8 +12,8 @@ const routes: Routes = [
     loadChildren: () => import('./mislogros/mislogros.module').then(m => m.MislogrosModule)
   },
   {
-    path: 'mitesis',
-    loadChildren: () => import('./mitesis/mitesis.module').then(m => m.MitesisModule)
+    path: 'gestionarActividad',
+    loadChildren: () => import('./gestionarActividad/gestionarActividad.module').then(m => m.GestionarActividadModule)
   },
   {
     path: 'requisitos',    
@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path:'',
-    redirectTo: 'especialidades'
+    redirectTo: 'gestionarActividad'
   }          
   
 ];

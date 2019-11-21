@@ -1,0 +1,48 @@
+<mat-toolbar>Agregar Actividad</mat-toolbar>
+<form class="contenedor" action="">
+        <mat-form-field>
+                <mat-select placeholder="Seleccione Tipo de Actividad">
+                    <mat-option value="Tesis">Tesis</mat-option>   
+                    <mat-option value="Trabajo de Invetigacion">Trabajo de Invetigacion</mat-option> 
+                </mat-select>                 
+        </mat-form-field>        
+        <table class="example-full-width" cellspacing="0"><tr>
+                <td><mat-form-field>
+                        <mat-select placeholder="Escuela">
+                            <mat-option value="Aldo Lopez Mamani">EPIS</mat-option>   
+                            <mat-option value="Kevin Montes de Oca">EPIAM</mat-option> 
+                        </mat-select>                 
+                </mat-form-field></td>
+                <td><mat-form-field>
+                        <mat-select placeholder="Ciclo">
+                            <mat-option value="Aldo Lopez Mamani">IX</mat-option>   
+                            <mat-option value="Kevin Montes de Oca">X</mat-option> 
+                        </mat-select>                 
+                </mat-form-field></td>
+                <td><mat-form-field>
+                        <mat-select placeholder="Alumno">
+                            <mat-option value="Aldo Lopez Mamani">Aldo Franco Lopez Mamani</mat-option>   
+                            <mat-option value="Kevin Montes de Oca">Gary Joseph Calle Cortez</mat-option> 
+                        </mat-select>                 
+                </mat-form-field></td>                
+              </tr></table>
+        <mat-form-field>
+                <mat-select placeholder="Asesor">
+                    <mat-option value="Alberto Flor Rodriguez">Alberto Flor Rodriguez</mat-option>   
+                    <mat-option value="Elard Rodriguez Marca">Elard Rodriguez Marca</mat-option> 
+                </mat-select>                 
+        </mat-form-field>
+        <mat-form-field>
+                <input matInput placeholder="Titulo">
+        </mat-form-field>       
+        <mat-form-field>
+                <textarea matInput placeholder="Descripcion"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+                <textarea matInput placeholder="Resumen"></textarea>
+        </mat-form-field>        
+        <button mat-flat-button color="accent">Guardar</button>
+        
+</form>
+
+

@@ -12,8 +12,8 @@ export class InicioComponent implements OnInit {
 
   ngOnInit() {
   }
-  asesoria(): void {        
-        this.router.navigate(["../asesoria"]);        
+  alumno(): void {        
+        this.router.navigate(["../alumno"]);        
   }
 
 

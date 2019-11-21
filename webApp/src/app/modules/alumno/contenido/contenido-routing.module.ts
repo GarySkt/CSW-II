@@ -4,8 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'actividades',
-    loadChildren: () => import('./actividades/actividades.module').then(m => m.ActividadesModule)
+    path: 'especialidades',
+    loadChildren: () => import('./especialidades/especialidades.module').then(m => m.EspecialidadesModule)
   },
   {
     path: 'mislogros',
@@ -21,7 +21,7 @@ const routes: Routes = [
   },
   {
     path:'',
-    redirectTo: 'actividades'
+    redirectTo: 'especialidades'
   }          
   
 ];

@@ -8,8 +8,8 @@ const routes: Routes = [
   },
 
   {
-    path: 'asesoria',
-    loadChildren: () => import('./modules/asesoria/asesoria.module').then(m => m.AsesoriaModule)
+    path: 'alumno',
+    loadChildren: () => import('./modules/alumno/alumno.module').then(m => m.AlumnoModule)
   },
 
   {

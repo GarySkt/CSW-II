@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AsesoriaTesisWebAPI.Models;
+using AsesoriaTesisWebAPI.DataAccess;
+using AsesoriaTesisWebAPI.CustomModels;
 
 namespace AsesoriaTesisWebAPI.Controllers
 {
@@ -14,10 +16,12 @@ namespace AsesoriaTesisWebAPI.Controllers
     public class AsesorController : ControllerBase
     {
         private readonly TutoriaContext _context;
+        private AsesorDA asesorDA;
 
         public AsesorController(TutoriaContext context)
         {
             _context = context;
+            asesorDA = new AsesorDA();
         }
 
         // GET: api/Asesor
@@ -115,5 +119,23 @@ namespace AsesoriaTesisWebAPI.Controllers
         {
             return _context.Asesor.Any(e => e.AsesorId == id);
         }
+
+        /////// METODOS AGREGADOS ///////
+      
+        /// GET: api/Asesor/GetAsesorEscuela/idEscuela
+        [HttpGet]
+        [Route("[action]/{idEscuela}")]
+        public async Task<ActionResult<IEnumerable<EntidadAsesor>>> GetAsesorEscuela(int idEscuela)
+        {
+            var alumno = await asesorDA.GetAsesorEscuela(idEscuela);
+
+            if (alumno == null)
+            {
+                return NotFound();
+            }
+
+            return alumno;
+        }
+
     }
 }

@@ -29,12 +29,12 @@ namespace AsesoriaTesisWebAPI.DataAccess
         public async Task<ActionResult<IEnumerable<DocenteLineaInvestigacion>>> GetDocenteLineaInvestigacion(int idDocente)
         {
             List<DocenteLineaInvestigacion> listaDocente = new List<DocenteLineaInvestigacion>();
-            var listarEspecialidad = await dbContext.LineaInvestigacionDocente
+            var resultList = await dbContext.LineaInvestigacionDocente
                 .Include(e => e.LineaInvestigacion)
                 .Where(e => e.DocenteId.Equals(idDocente))
                 .ToListAsync();
 
-            foreach (var lista in listarEspecialidad)
+            foreach (var lista in resultList)
             {
                 DocenteLineaInvestigacion docenteLineaInvestigacion = new DocenteLineaInvestigacion()
                 {
@@ -57,9 +57,8 @@ namespace AsesoriaTesisWebAPI.DataAccess
         /// <returns>lista de docentes</returns>
         public async Task<ActionResult<IEnumerable<DocenteLineaInvestigacion>>> GetLineaInvestigacionDocente(int idLineaInvestigacion)
         {
-            List<DocenteLineaInvestigacion> listaDocente = new List<DocenteLineaInvestigacion>();
-
-            var listarDocente = await (from ed in dbContext.LineaInvestigacionDocente
+            
+            var resultList = await (from ed in dbContext.LineaInvestigacionDocente
                                        join d in dbContext.Docente on ed.DocenteId equals d.DocenteId                                       
                                        join en in dbContext.Entidad on d.DocenteId equals en.EntidadId
                                        join p in dbContext.Persona on en.EntidadId equals p.EntidadId
@@ -74,23 +73,9 @@ namespace AsesoriaTesisWebAPI.DataAccess
                                            EscuelaNombre = e.Nombre,
                                            LineaInvestigacionID = ed.LineaInvestigacionId
                                        }).ToListAsync();
+                       
 
-            foreach (var lista in listarDocente)
-            {
-                DocenteLineaInvestigacion docenteEspecialidad = new DocenteLineaInvestigacion()
-                {
-                    DocenteID = lista.DocenteID,
-                    DocenteNombre = lista.DocenteNombre,
-                    DocenteApellido = lista.DocenteApellido,
-                    EscuelaID = lista.EscuelaID,
-                    EscuelaNombre = lista.EscuelaNombre,
-                    LineaInvestigacionID = lista.LineaInvestigacionID
-                };
-
-                listaDocente.Add(docenteEspecialidad);
-            }
-
-            return listaDocente;
+            return resultList;
 
         }
 

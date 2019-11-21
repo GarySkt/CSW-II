@@ -7,17 +7,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AsesoriaTesisWebAPI.Models;
 
+
 namespace AsesoriaTesisWebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class RolController : ControllerBase
     {
-        private readonly TutoriaContext _context;
+        private readonly TutoriaContext _context;       
 
         public RolController(TutoriaContext context)
         {
-            _context = context;
+            _context = context;            
         }
 
         // GET: api/Rol
@@ -101,5 +102,6 @@ namespace AsesoriaTesisWebAPI.Controllers
         {
             return _context.Rol.Any(e => e.RolId == id);
         }
+        
     }
 }

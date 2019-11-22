@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./mislogros/mislogros.module').then(m => m.MislogrosModule)
   },
   {
+    path: 'entregables',
+    loadChildren: () => import('./actividades/entregables/entregables.module').then(m => m.EntregablesModule)
+  },
+  {
     path: 'mitesis',
     loadChildren: () => import('./mitesis/mitesis.module').then(m => m.MitesisModule)
   },

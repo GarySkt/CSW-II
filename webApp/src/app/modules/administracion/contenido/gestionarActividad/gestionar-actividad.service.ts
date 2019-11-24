@@ -11,7 +11,7 @@ export class GestionarActividadService {
   constructor(private http: HttpClient) { }
 
   urlAPI = "https://localhost:5001/api/actividadtipo";
-  obtenerActividades():Observable<Actividad[]>{
+  obtenerTiposActividad():Observable<Actividad[]>{
     return this.http.get<Actividad[]>(this.urlAPI)
   }
 }

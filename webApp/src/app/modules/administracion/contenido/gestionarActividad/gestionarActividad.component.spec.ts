@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MitesisComponent } from './gestionarActividad.component';
+import { GestionarActividadComponent } from './gestionarActividad.component';
 
-describe('MitesisComponent', () => {
-  let component: MitesisComponent;
-  let fixture: ComponentFixture<MitesisComponent>;
+describe('GestionarActividadComponent', () => {
+  let component: GestionarActividadComponent;
+  let fixture: ComponentFixture<GestionarActividadComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MitesisComponent ]
+      declarations: [ GestionarActividadComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MitesisComponent);
+    fixture = TestBed.createComponent(GestionarActividadComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

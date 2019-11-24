@@ -9,6 +9,7 @@ import { Asesor } from './asesor.interface';
 import { AsesorService } from './asesor.service';
 import { Alumno } from './alumno.interface';
 import { AlumnoService } from './alumno.service';
+import { GuardarActividadService } from './guardar-actividad.service';
 
 @Component({
   selector: 'app-gestionarActividad',
@@ -23,15 +24,25 @@ export class GestionarActividadComponent implements OnInit {
   asesor: Asesor[] = new Array<Asesor>();
   alumno: Alumno[] = new Array<Alumno>();
 
+  AlumnoId: number;
+  Titulo: string;
+  Resumen: string;
+  Descripcion: string;
+  AsesorId: number;
+  ActividadTipoId: number;
+  escuelaId: number;
+  nombre: undefined;
+
   constructor(
     private gestionarActividadService: GestionarActividadService,
     private escuelas: EscuelaService,
     private cicloAcademico: CicloAcademicoService,
     private asesorEscuela: AsesorService,
-    private alumnoEscuela: AlumnoService
+    private alumnoEscuela: AlumnoService,
+    private actividades: GuardarActividadService
     ) { }
   ngOnInit() {
-    this.gestionarActividadService.obtenerActividades().subscribe(
+    this.gestionarActividadService.obtenerTiposActividad().subscribe(
       actividadesAPI =>{
         this.actividad = actividadesAPI;
       }
@@ -60,9 +71,36 @@ export class GestionarActividadComponent implements OnInit {
         this.alumno = alumnoEscuelaAPI;
       }
     )
+  }
+  guardarActividad(){
+    this.actividades.agregarActividad(
+      this.AlumnoId,
+      this.Titulo,
+      this.Resumen,
+      this.Descripcion,
+      this.AsesorId,
+      this.ActividadTipoId
+    ).subscribe(
+      respuestaActividad=>{
+        alert('Esta actividad fue guardar en la puta base de datos con un puto exito')
+        this.limpiarFormulario();
 
+      },err=>{
+        alert('no funciona we :( , sigue intentando tu puedes campion')
+      },()=>{
+
+      }
+    )    
   }
 
-  
-
+  limpiarFormulario(){
+    this.Titulo='';
+    this.Descripcion = '';
+    this.Resumen = '';
+    this.AlumnoId = undefined;
+    this.ActividadTipoId = undefined;
+    this.nombre= undefined;
+    this.AsesorId = undefined;
+    this.escuelaId = undefined;
+  }
 }

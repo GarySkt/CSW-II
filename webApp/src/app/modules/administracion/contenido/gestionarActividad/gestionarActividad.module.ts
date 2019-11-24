@@ -6,9 +6,12 @@ import { MatToolbarModule, MatSelectModule, MatInputModule } from '@angular/mate
 import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatIconModule} from '@angular/material/icon'
 import {MatButtonModule} from '@angular/material/button';
+import { MatTableModule } from '@angular/material';
+import { TablaActividadesComponent } from './tabla-actividades/tabla-actividades.component'  
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [GestionarActividadComponent],
+  declarations: [GestionarActividadComponent, TablaActividadesComponent],
   imports: [
     CommonModule,
     GestionarActividadRoutingModule,
@@ -17,7 +20,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatSelectModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule,
+    FormsModule
   ]
 })
 export class GestionarActividadModule { }

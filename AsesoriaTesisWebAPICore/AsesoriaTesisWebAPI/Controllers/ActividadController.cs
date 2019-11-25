@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AsesoriaTesisWebAPI.Models;
+using AsesoriaTesisWebAPI.DataAccess;
+using AsesoriaTesisWebAPI.CustomModels;
 
 namespace AsesoriaTesisWebAPI.Controllers
 {
@@ -14,10 +16,12 @@ namespace AsesoriaTesisWebAPI.Controllers
     public class ActividadController : ControllerBase
     {
         private readonly TutoriaContext _context;
+        private ActividadDA actividadDA;
 
         public ActividadController(TutoriaContext context)
         {
             _context = context;
+            actividadDA = new ActividadDA();
         }
 
         // GET: api/Actividad
@@ -101,5 +105,22 @@ namespace AsesoriaTesisWebAPI.Controllers
         {
             return _context.Actividad.Any(e => e.ActividadId == id);
         }
+
+        /////// METODOS AGREGADOS ///////
+
+        [HttpGet]
+        [Route("[action]")]
+        public async Task<ActionResult<IEnumerable<ActividadDetalle>>> GetActividadDetalle()
+        {
+            var actividad = await actividadDA.GetActividadDetalle();
+
+            if (actividad == null)
+            {
+                return NotFound();
+            }
+
+            return actividad;
+        }
+
     }
 }

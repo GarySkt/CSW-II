@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {Actividad} from './actividad.interface';
-import {GestionarActividadService} from './gestionar-actividad.service';
-import { Escuela } from './escuela.interface';
-import { EscuelaService } from './escuela.service';
-import { CicloAcademico } from './cicloAcademico.interface';
-import { CicloAcademicoService } from './ciclo-academico.service';
-import { Asesor } from './asesor.interface';
-import { AsesorService } from './asesor.service';
-import { Alumno } from './alumno.interface';
-import { AlumnoService } from './alumno.service';
-import { GuardarActividadService } from './guardar-actividad.service';
+import {Actividad} from './interfaces/actividad.interface';
+import {GestionarActividadService} from '././servicios/gestionar-actividad.service';
+import { Escuela } from '././interfaces/escuela.interface';
+import { EscuelaService } from '././servicios/escuela.service';
+import { CicloAcademico } from '././interfaces/cicloAcademico.interface';
+import { CicloAcademicoService } from '././servicios/ciclo-academico.service';
+import { Asesor } from '././interfaces/asesor.interface';
+import { AsesorService } from '././servicios/asesor.service';
+import { Alumno } from '././interfaces/alumno.interface';
+import { AlumnoService } from '././servicios/alumno.service';
+import { GuardarActividadService } from '././servicios/guardar-actividad.service';
 
 @Component({
   selector: 'app-gestionarActividad',

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable} from 'rxjs';
-import { Alumno } from './alumno.interface';
+import { Alumno } from 'src/app/modules/administracion/contenido/gestionarActividad/interfaces/alumno.interface';
+
 
 @Injectable({
   providedIn: 'root'

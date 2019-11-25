@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { CicloAcademico } from './cicloAcademico.interface';
+import { CicloAcademico } from 'src/app/modules/administracion/contenido/gestionarActividad/interfaces/cicloAcademico.interface';
 
 @Injectable({
   providedIn: 'root'

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Asesor } from './asesor.interface';
+import { Asesor } from 'src/app/modules/administracion/contenido/gestionarActividad/interfaces/asesor.interface';
 
 @Injectable({
   providedIn: 'root'

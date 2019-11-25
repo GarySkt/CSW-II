@@ -1,4 +1,7 @@
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<div *ngFor="let actividad of actividades">
+  <p>{{actividad.titulo}}</p>
+</div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
 
     <!-- Position Column -->
     <ng-container matColumnDef="uno">

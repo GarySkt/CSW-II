@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Actividad } from '../interfaces/actividad';
+import { ObtenerListaActividadesService } from '../servicios/obtener-lista-actividades.service';
 
 export interface PeriodicElement {
   name: string;
@@ -23,12 +25,19 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class TablaActividadesComponent implements OnInit {
 
-  constructor() { }
+  actividades: Actividad[] = new Array<Actividad>();  
+
+  constructor( private obtenerListaActividades: ObtenerListaActividadesService) { }
 
   displayedColumns: string[] = ['uno', 'name', 'weight', 'symbol','descripcion','estado','acciones'];
   dataSource = ELEMENT_DATA;
 
   ngOnInit() {
+    this.obtenerListaActividades.obtenerDatosTablaActividades().subscribe(
+      respuesta => {
+        this.actividades = respuesta
+      }
+    )
   }
 
 }

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Actividad } from './actividad';
-import { ActividadRespuesta } from './actividadRespuesta';
+import { Actividad } from 'src/app/modules/administracion/contenido/gestionarActividad/interfaces/actividad';
+import { ActividadRespuesta } from 'src/app/modules/administracion/contenido/gestionarActividad/interfaces/actividadRespuesta';
 
 @Injectable({
   providedIn: 'root'

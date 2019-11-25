@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Escuela } from './escuela.interface';
+import { Escuela } from 'src/app/modules/administracion/contenido/gestionarActividad/interfaces/escuela.interface';
 
 @Injectable({
   providedIn: 'root'

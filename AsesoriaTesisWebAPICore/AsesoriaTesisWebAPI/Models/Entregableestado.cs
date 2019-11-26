@@ -14,7 +14,7 @@ namespace AsesoriaTesisWebAPI.Models
         public string DocumentoUrl { get; set; }
         public DateTime Fecha { get; set; }
         public string ComentarioAlumno { get; set; }
-        public string ComentarioDocente { get; set; }
+        public string ComentarioAsesor { get; set; }
         public int Estado { get; set; }
 
         public virtual ICollection<EntregableHistoria> EntregableHistoria { get; set; }

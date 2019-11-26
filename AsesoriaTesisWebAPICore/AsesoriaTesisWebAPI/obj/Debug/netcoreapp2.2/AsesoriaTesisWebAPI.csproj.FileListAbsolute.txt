@@ -76,4 +76,3 @@ F:\VisualStudio\REPOSITORIO\GarySkt\CSW-II\AsesoriaTesisWebAPICore\AsesoriaTesis
 F:\VisualStudio\REPOSITORIO\GarySkt\CSW-II\AsesoriaTesisWebAPICore\AsesoriaTesisWebAPI\obj\Debug\netcoreapp2.2\AsesoriaTesisWebAPI.RazorTargetAssemblyInfo.cache
 F:\VisualStudio\REPOSITORIO\GarySkt\CSW-II\AsesoriaTesisWebAPICore\AsesoriaTesisWebAPI\obj\Debug\netcoreapp2.2\AsesoriaTesisWebAPI.dll
 F:\VisualStudio\REPOSITORIO\GarySkt\CSW-II\AsesoriaTesisWebAPICore\AsesoriaTesisWebAPI\obj\Debug\netcoreapp2.2\AsesoriaTesisWebAPI.pdb
-F:\VisualStudio\REPOSITORIO\GarySkt\CSW-II\AsesoriaTesisWebAPICore\AsesoriaTesisWebAPI\obj\Debug\netcoreapp2.2\AsesoriaTesisWebAPI.csprojAssemblyReference.cache

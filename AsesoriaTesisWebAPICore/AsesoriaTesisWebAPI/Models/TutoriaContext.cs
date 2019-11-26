@@ -96,7 +96,7 @@ namespace AsesoriaTesisWebAPI.Models
 
                 entity.Property(e => e.Resumen)
                     .IsRequired()
-                    .HasMaxLength(500)
+                    .HasMaxLength(1000)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Titulo)
@@ -312,10 +312,6 @@ namespace AsesoriaTesisWebAPI.Models
                     .HasMaxLength(300)
                     .IsUnicode(false);
 
-                entity.Property(e => e.FechaAprobado)
-                    .HasColumnType("date")
-                    .HasDefaultValueSql("('1500-05-05')");
-
                 entity.HasOne(d => d.Actividad)
                     .WithMany(p => p.Entregable)
                     .HasForeignKey(d => d.ActividadId)
@@ -329,12 +325,12 @@ namespace AsesoriaTesisWebAPI.Models
 
                 entity.Property(e => e.ComentarioAlumno)
                     .IsRequired()
-                    .HasMaxLength(300)
+                    .HasMaxLength(500)
                     .IsUnicode(false);
 
-                entity.Property(e => e.ComentarioDocente)
+                entity.Property(e => e.ComentarioAsesor)
                     .IsRequired()
-                    .HasMaxLength(300)
+                    .HasMaxLength(500)
                     .IsUnicode(false);
 
                 entity.Property(e => e.DocumentoUrl)

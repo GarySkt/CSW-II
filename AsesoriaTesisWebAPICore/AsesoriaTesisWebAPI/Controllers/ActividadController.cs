@@ -122,5 +122,19 @@ namespace AsesoriaTesisWebAPI.Controllers
             return actividad;
         }
 
+        [HttpGet]
+        [Route("[action]/{idEntidad}")]
+        public async Task<ActionResult<IEnumerable<ActividadDetalle>>> GetActividadDetalle(int idEntidad)
+        {
+            var actividad = await actividadDA.GetActividadDetalle(idEntidad);
+
+            if (actividad == null)
+            {
+                return NotFound();
+            }
+
+            return actividad;
+        }
+
     }
 }

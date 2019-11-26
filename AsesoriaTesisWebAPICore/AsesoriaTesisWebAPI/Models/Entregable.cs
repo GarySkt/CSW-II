@@ -16,7 +16,6 @@ namespace AsesoriaTesisWebAPI.Models
         public string Descripcion { get; set; }
         public string Comentario { get; set; }
         public int NumeroOrden { get; set; }
-        public DateTime FechaAprobado { get; set; }
 
         public virtual Actividad Actividad { get; set; }
         public virtual ICollection<EntregableHistoria> EntregableHistoria { get; set; }

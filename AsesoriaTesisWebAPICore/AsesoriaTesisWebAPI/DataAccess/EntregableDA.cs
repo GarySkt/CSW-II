@@ -6,6 +6,7 @@ using AsesoriaTesisWebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using AsesoriaTesisWebAPI.CustomModels;
+using System;
 
 namespace AsesoriaTesisWebAPI.DataAccess
 {
@@ -25,14 +26,14 @@ namespace AsesoriaTesisWebAPI.DataAccess
         /// </summary>
         /// <param name="idActividad"></param>
         /// <returns></returns>
-        public async Task<ActionResult<IEnumerable<EntregableMedallaDetalle>>> GetEntregableMedallaUltimo(int idActividad)
+        public async Task<ActionResult<IEnumerable<EntregableMedallaDetalle>>> GetEntregableMedallaUltimo(int idEntregable)
         {
             List<EntregableMedallaDetalle> medallaList = new List<EntregableMedallaDetalle>();
             var resultList = await (from entm in dbContext.EntregableMedalla                                    
                                     join ent in dbContext.Entregable on entm.EntregableId equals ent.EntregableId
                                     join med in dbContext.Medalla on entm.MedallaId equals med.MedallaId
                                     join medt in dbContext.MedallaTipo on med.MedallaTipoId equals medt.MedallaTipoId
-                                    where ent.ActividadId == idActividad
+                                    where ent.EntregableId == idEntregable
                                     select new EntregableMedallaDetalle
                                     {
                                         EntregableMedallaID = entm.EntregableMedallaId,
@@ -51,11 +52,11 @@ namespace AsesoriaTesisWebAPI.DataAccess
         }
 
         public async Task<ActionResult<IEnumerable<EntregableDetalle>>> GetEntregableDetalle(int idActividad)
-        {
-            var lastMedal = await GetEntregableMedallaUltimo(idActividad);
-            
-            var lastEstado = await entregableEstadoDA.GetEntregableEstadoUltimo(idActividad);
+        {            
 
+            List<EntregableDetalle> listaEntregable = new List<EntregableDetalle>();
+
+            //Se obtienen los entregables
             var resultList = await (from ent in dbContext.Entregable
                                     where ent.ActividadId == idActividad
                                     select new EntregableDetalle
@@ -64,19 +65,37 @@ namespace AsesoriaTesisWebAPI.DataAccess
                                         ActividadId = ent.ActividadId,
                                         Descripcion = ent.Descripcion,
                                         Comentario = ent.Comentario,
-                                        NumeroOrden = ent.NumeroOrden,
-                                        EntregableEstadoId = lastEstado.Value.First().EntregableEstadoId,
-                                        EntregableDocumentoURL = lastEstado.Value.First().DocumentoUrl,
-                                        EstadoFecha = lastEstado.Value.First().Fecha,
-                                        ComentarioAlumno = lastEstado.Value.First().ComentarioAlumno,
-                                        ComentarioAsesor = lastEstado.Value.First().ComentarioAsesor,
-                                        EntregableEstado = lastEstado.Value.First().Estado,
-                                        MedallaId = lastMedal.Value.First().MedallaId,
-                                        MedallaNombre = lastMedal.Value.First().MedallaNombre,
-                                        MedallaImagenURL = lastMedal.Value.First().MedallaImagenUrl
+                                        NumeroOrden = ent.NumeroOrden                                        
                                     }).ToListAsync();
 
-            return resultList;
+            foreach (var list in resultList)
+            {
+                //Se obtienen las ultimas actualizaciones de cada entregable y se agrega a la lista 
+                var lastEstado = await entregableEstadoDA.GetEntregableEstadoUltimo(list.EntregableId);
+                var lastMedal = await GetEntregableMedallaUltimo(list.EntregableId);
+
+                EntregableDetalle entregableDetalle = new EntregableDetalle()
+                {                    
+                    EntregableId = list.EntregableId,
+                    ActividadId = list.ActividadId,
+                    Descripcion = list.Descripcion,
+                    Comentario = list.Comentario,
+                    NumeroOrden = list.NumeroOrden,
+                    EntregableEstadoId = lastEstado.Value.First() != null ? lastEstado.Value.First().EntregableEstadoId : 0,
+                    EntregableDocumentoURL = lastEstado.Value.First() != null ? lastEstado.Value.First().DocumentoUrl : "Sin especificar documento",
+                    EstadoFecha = lastEstado.Value.First() != null ? lastEstado.Value.First().Fecha : Convert.ToDateTime("1500-05-05"),
+                    ComentarioAlumno = lastEstado.Value.First() != null ? lastEstado.Value.First().ComentarioAlumno : "Sin comentarios",
+                    ComentarioAsesor = lastEstado.Value.First() != null ? lastEstado.Value.First().ComentarioAsesor: "Sin comentarios",
+                    EntregableEstado = lastEstado.Value.First() != null ? lastEstado.Value.First().Estado : 3,
+                    MedallaId = lastMedal.Value.First() != null ? lastMedal.Value.First().MedallaId : 0,
+                    MedallaNombre = lastMedal.Value.First() != null ? lastMedal.Value.First().MedallaNombre : "No se asignaron medallas",
+                    MedallaImagenURL = lastMedal.Value.First() != null ? lastMedal.Value.First().MedallaImagenUrl : "No se asignaron medallas"
+                };
+
+                listaEntregable.Add(entregableDetalle);
+            }
+
+            return listaEntregable;
 
         }
     }

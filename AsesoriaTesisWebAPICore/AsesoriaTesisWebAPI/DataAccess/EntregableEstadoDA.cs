@@ -16,13 +16,13 @@ namespace AsesoriaTesisWebAPI.DataAccess
             dbContext = new TutoriaContext();
         }
 
-        public async Task<ActionResult<IEnumerable<EntregableEstado>>> GetEntregableEstadoUltimo(int idActividad)
+        public async Task<ActionResult<IEnumerable<EntregableEstado>>> GetEntregableEstadoUltimo(int idEntregable)
         {
             List<EntregableEstado> estadoList = new List<EntregableEstado>();
             var resultList = await (from enth in dbContext.EntregableHistoria
                                     join ente in dbContext.EntregableEstado on enth.EntregableEstadoId equals ente.EntregableEstadoId
                                     join ent in dbContext.Entregable on enth.EntregableId equals ent.EntregableId
-                                    where ent.ActividadId == idActividad
+                                    where ent.EntregableId == idEntregable
                                     select new EntregableEstado
                                     {
                                         EntregableEstadoId = enth.EntregableEstadoId,

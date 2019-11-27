@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AsesoriaTesisWebAPI.Models;
+using AsesoriaTesisWebAPI.DataAccess;
+using AsesoriaTesisWebAPI.CustomModels;
 
 namespace AsesoriaTesisWebAPI.Controllers
 {
@@ -14,10 +16,12 @@ namespace AsesoriaTesisWebAPI.Controllers
     public class EntregableController : ControllerBase
     {
         private readonly TutoriaContext _context;
+        private EntregableDA entregableDA;
 
         public EntregableController(TutoriaContext context)
         {
             _context = context;
+            entregableDA = new EntregableDA();
         }
 
         // GET: api/Entregable
@@ -101,5 +105,28 @@ namespace AsesoriaTesisWebAPI.Controllers
         {
             return _context.Entregable.Any(e => e.EntregableId == id);
         }
+
+        /////// METODOS AGREGADOS ///////
+
+        /// <summary>
+        /// Metodo para obtener lista de entregables con última actualización.
+        /// GET: api/Entregable/GetEntregableDetalle/idActividad
+        /// </summary>
+        /// <param name="idActividad"> ID de la actividad</param>
+        /// <returns>lista con los entregables detallados de una actividad</returns>
+        [HttpGet]
+        [Route("[action]/{idActividad}")]
+        public async Task<ActionResult<IEnumerable<EntregableDetalle>>> GetEntregableDetalle(int idActividad)
+        {
+            var listEntregableDetalle = await entregableDA.GetEntregableDetalle(idActividad);
+
+            if (listEntregableDetalle == null)
+            {
+                return NotFound();
+            }
+
+            return listEntregableDetalle;
+        }
+
     }
 }

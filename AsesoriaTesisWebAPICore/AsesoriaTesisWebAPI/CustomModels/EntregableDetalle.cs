@@ -15,10 +15,11 @@ namespace AsesoriaTesisWebAPI.CustomModels
         public int EntregableHistoriaId { get; set; }
 
         public int EntregableEstadoId { get; set; }
+        public string EntregableDocumentoURL { get; set; }
         public DateTime EstadoFecha { get; set; }
         public string ComentarioAlumno { get; set; }
         public string ComentarioAsesor { get; set; }
-        public int Estado { get; set; }
+        public int EntregableEstado { get; set; }
 
         public int EntregableMedallaId { get; set; }
         public int MedallaId { get; set; }

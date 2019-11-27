@@ -1,6 +1,7 @@
 export interface AutenticacionRespuesta{
     token: string;
     rolId: number;
-    nombreusuario: string;
-    apellidousuario: string;
+    entidadId: number;
+    nombreEntidad: string;
+    apellidoEntidad: string;    
 }

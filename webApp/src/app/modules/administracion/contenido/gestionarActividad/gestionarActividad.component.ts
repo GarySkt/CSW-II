@@ -82,11 +82,11 @@ export class GestionarActividadComponent implements OnInit {
       this.ActividadTipoId
     ).subscribe(
       respuestaActividad=>{
-        alert('Esta actividad fue guardar en la puta base de datos con un puto exito')
+        alert('Actividad Guardada con exito.')
         this.limpiarFormulario();
 
       },err=>{
-        alert('no funciona we :( , sigue intentando tu puedes campion')
+        alert('Hubo un error al guardar la actividad.')
       },()=>{
 
       }

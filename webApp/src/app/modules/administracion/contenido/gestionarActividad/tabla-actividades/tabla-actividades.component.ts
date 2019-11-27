@@ -1,22 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Actividad } from '../interfaces/actividad';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { datosActividadTabla } from '../interfaces/datosActividadTabla.interface';
 import { ObtenerListaActividadesService } from '../servicios/obtener-lista-actividades.service';
-
-export interface PeriodicElement {
-  name: string;
-  position: string;
-  weight: string;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 'Tesis', name: 'Kevin', weight: 'Alberto Flor', symbol: 'Titulo de Tesis'},
-  {position: 'Tesis', name: 'Kevin', weight: 'Alberto Flor', symbol: 'Titulo de Tesis'},
-  {position: 'Tesis', name: 'Kevin', weight: 'Alberto Flor', symbol: 'Titulo de Tesis'},
-  {position: 'Tesis', name: 'Kevin', weight: 'Alberto Flor', symbol: 'Titulo de Tesis'},
-  {position: 'Tesis', name: 'Kevin', weight: 'Alberto Flor', symbol: 'Titulo de Tesis'},
-  {position: 'Articulo', name: 'Kevin', weight: 'Alberto Flor', symbol: 'Titulo de Tesis'},
-];
+import { DataSource } from '@angular/cdk/table';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-tabla-actividades',
@@ -24,20 +10,25 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./tabla-actividades.component.scss']
 })
 export class TablaActividadesComponent implements OnInit {
+  displayedColumns: string[] = ['actividad', 'alumno', 'asesor','titulo', 'descripcion','estado','acciones'];  
+  dataSource = new DatosTablaActividad(this.obtenerListaActividades);
 
-  actividades: Actividad[] = new Array<Actividad>();  
+  actividades: datosActividadTabla[] = new Array<datosActividadTabla>();  
+  
+  constructor( private obtenerListaActividades: ObtenerListaActividadesService,
+    private changeDetectorRefs: ChangeDetectorRef) { } 
 
-  constructor( private obtenerListaActividades: ObtenerListaActividadesService) { }
-
-  displayedColumns: string[] = ['uno', 'name', 'weight', 'symbol','descripcion','estado','acciones'];
-  dataSource = ELEMENT_DATA;
-
-  ngOnInit() {
-    this.obtenerListaActividades.obtenerDatosTablaActividades().subscribe(
-      respuesta => {
-        this.actividades = respuesta
-      }
-    )
+  ngOnInit() {      
   }
-
 }
+
+export class DatosTablaActividad extends DataSource<any>{
+  constructor(private obtenerListaActividades: ObtenerListaActividadesService) { 
+    super();
+  }connect():Observable<datosActividadTabla[]>{
+    return this.obtenerListaActividades.obtenerDatosTablaActividades(); 
+  }
+  disconnect(){}
+}
+
+

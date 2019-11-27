@@ -51,7 +51,8 @@ namespace AsesoriaTesisWebAPI.Autenticacion
                 CodigoInstitucional = accesoUsuario?.CodigoInstitucional ?? "",
                 NombreUsuario = accesoUsuario?.Entidad?.Nombre ?? "",
                 ApellidoUsuario = accesoUsuario?.Entidad?.Apellido ?? "",
-                Rol = accesoUsuario?.Entidad?.Entidad?.Rol?.RolId ?? 0
+                Rol = accesoUsuario?.Entidad?.Entidad?.Rol?.RolId ?? 0,
+                EntidadId = accesoUsuario?.Entidad?.Entidad?.EntidadId ?? 0,
             };
         }
         /// <summary>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedserviceService} from '../../../sharedservice.service'
 
 @Component({
   selector: 'app-navegacion-lateral',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NavegacionLateralComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public shared: SharedserviceService) { }
 
   ngOnInit() {
   }

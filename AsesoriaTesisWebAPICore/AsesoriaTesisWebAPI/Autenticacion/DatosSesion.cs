@@ -20,8 +20,9 @@ namespace AsesoriaTesisWebAPI.Autenticacion
         /// </summary>
         public string ApellidoUsuario { get; set; }
         /// <summary>
-        /// Rol del usuario logueado
+        /// RolID del usuario logueado
         /// </summary>
         public int Rol { get; set; }
+        public int EntidadId { get; set; }
     }
 }

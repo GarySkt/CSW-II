@@ -39,6 +39,9 @@ namespace AsesoriaTesisWebAPI.Autenticacion
             {
                 loginRespuesta.token = autenticacion.generarTokenJWT(usuarioEncontrado);
                 loginRespuesta.rolId = usuarioEncontrado.Rol;
+                loginRespuesta.entidadId = usuarioEncontrado.EntidadId;
+                loginRespuesta.nombreEntidad = usuarioEncontrado.NombreUsuario;
+                loginRespuesta.apellidoEntidad = usuarioEncontrado.ApellidoUsuario;
                 //return Ok(new { token = autenticacion.generarTokenJWT(
                 //    usuarioEncontrado) });
                 return Ok(loginRespuesta);

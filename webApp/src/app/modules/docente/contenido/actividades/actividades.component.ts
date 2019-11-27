@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Docente } from './docente.interface';
-import { ActividadesService } from './actividades.service';
+import { SharedserviceService } from '../../../../sharedservice.service';
+import { ActividadDocente } from './interfaces/actividadDocente.interface';
+import { ObtenerActividadesDocenteService } from './servicios/obtener-actividades-docente.service';
 
 @Component({
   selector: 'app-actividades',
@@ -9,18 +10,28 @@ import { ActividadesService } from './actividades.service';
 })
 export class ActividadesComponent implements OnInit {
 
-  docentes: Docente[] = new Array<Docente>();
+  actividadesDocente: ActividadDocente[] = new Array<ActividadDocente>();
 
-  constructor( private actividadesService: ActividadesService ) { 
+  constructor(  public shared: SharedserviceService, private obtenerActividadDocente: ObtenerActividadesDocenteService) { 
   }
-
+entidadId: number;
   ngOnInit() {
-    this.actividadesService.getDocentes().subscribe(
-      docentesAPI => {
-        this.docentes = docentesAPI;
+    this.entidadId= this.shared.entidadId;
+    alert(this.entidadId);
+    this.obtenerActividadDocente.obtenerActividadesDocente(this.entidadId).subscribe(
+      activiadadesDocente=>{
+        this.actividadesDocente = activiadadesDocente;
       }
-    );
+    )
   }
+
+  // obtenerActivdidadesDocente(entidadId){
+  //   this.obtenerActividadDocente.obtenerActividadesDocente(entidadId).subscribe(
+  //     activiadadesDocente=>{
+  //       this.actividadesDocente = activiadadesDocente;
+  //     }
+  //   )
+  // }
 
   
 

@@ -1,19 +1,16 @@
 <mat-toolbar>Agregar Actividad</mat-toolbar>
 <div class="contenedor">
-        <button mat-raised-button color="primary">
+        <button mat-raised-button color="primary" (click)="agregarActividad()">
                 <mat-icon>add_circle</mat-icon>Agregar
         </button>
-        <app-tabla-actividades></app-tabla-actividades>
-
-
+        <app-tabla-actividades></app-tabla-actividades>        
         <!--                    Formulario                      -->
         <form class="formulario" action="">
                 <mat-form-field>
                         <mat-select placeholder="Seleccione Tipo de Actividad" [(ngModel)]="ActividadTipoId"
-                        name="actividadTipoId" required>
-                                <mat-option *ngFor="let actividad of actividad"  [value]="actividad.actividadTipoId"                                
-                                >
-                                {{actividad.nombre}}
+                                name="actividadTipoId" required>
+                                <mat-option *ngFor="let actividad of actividad" [value]="actividad.actividadTipoId">
+                                        {{actividad.nombre}}
                                 </mat-option>
                         </mat-select>
                 </mat-form-field>
@@ -23,13 +20,9 @@
                                         <mat-form-field>
                                                 <mat-select placeholder="Escuelas"
                                                         (selectionChange)="obtenerAsesores($event.value)"
-                                                        [(ngModel)]="escuelaId"
-                                                        name="escuelaId"
-                                                        >
-                                                        <mat-option 
-                                                        *ngFor="let escuela of escuela"
-                                                        [value]="escuela.escuelaId"                                                        
-                                                        >
+                                                        [(ngModel)]="escuelaId" name="escuelaId">
+                                                        <mat-option *ngFor="let escuela of escuela"
+                                                                [value]="escuela.escuelaId">
                                                                 {{escuela.acronimo}}</mat-option>
                                                 </mat-select>
                                         </mat-form-field>
@@ -37,9 +30,9 @@
                                 <td>
                                         <mat-form-field>
                                                 <mat-select placeholder="Ciclo Academico" [(ngModel)]="nombre"
-                                                name="nombre">
-                                                        <mat-option *ngFor="let ciclo of cicloacademico" [value]="ciclo.nombre"                                                      
-                                                        >
+                                                        name="nombre">
+                                                        <mat-option *ngFor="let ciclo of cicloacademico"
+                                                                [value]="ciclo.nombre">
                                                                 {{ciclo.nombre}}</mat-option>
                                                 </mat-select>
                                         </mat-form-field>
@@ -47,8 +40,10 @@
                                 <td>
                                         <mat-form-field>
                                                 <mat-select placeholder="Alumno" [(ngModel)]="AlumnoId" name="AlumnoId">
-                                                        <mat-option *ngFor="let alumno of alumno" [value]="alumno.entidadID">
-                                                                {{alumno.personaNombre}} {{alumno.personaApellido}}</mat-option>
+                                                        <mat-option *ngFor="let alumno of alumno"
+                                                                [value]="alumno.entidadID">
+                                                                {{alumno.personaNombre}} {{alumno.personaApellido}}
+                                                        </mat-option>
                                                 </mat-select>
                                         </mat-form-field>
                                 </td>
@@ -56,7 +51,8 @@
                 </table>
                 <mat-form-field>
                         <mat-select placeholder="Asesor" [(ngModel)]="AsesorId" name="AsesorId">
-                                <mat-option *ngFor="let asesor of asesor" [value]="asesor.entidadID">{{asesor.personaNombre}}
+                                <mat-option *ngFor="let asesor of asesor" [value]="asesor.entidadID">
+                                        {{asesor.personaNombre}}
                                         {{asesor.personaApellido}}</mat-option>
                         </mat-select>
                 </mat-form-field>
@@ -64,7 +60,8 @@
                         <input matInput placeholder="Titulo" [(ngModel)]="Titulo" name="Titulo">
                 </mat-form-field>
                 <mat-form-field>
-                        <textarea matInput placeholder="Descripcion" [(ngModel)]="Descripcion" name="Descripcion"></textarea>
+                        <textarea matInput placeholder="Descripcion" [(ngModel)]="Descripcion"
+                                name="Descripcion"></textarea>
                 </mat-form-field>
                 <mat-form-field>
                         <textarea matInput placeholder="Resumen" [(ngModel)]="Resumen" name="Resumen"></textarea>

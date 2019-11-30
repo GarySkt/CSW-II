@@ -22,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     MatIconModule,
     MatButtonModule,
     MatTableModule,
-    FormsModule
+    FormsModule,
+    
   ]
 })
 export class GestionarActividadModule { }

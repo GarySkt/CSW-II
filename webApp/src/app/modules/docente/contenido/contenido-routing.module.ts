@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { EntregablesComponent } from './actividades/entregables/entregables.component';
+import { EntregablesModule } from './actividades/entregables/entregables.module';
 
 
 const routes: Routes = [
   {
     path: 'actividades',
-    loadChildren: () => import('./actividades/actividades.module').then(m => m.ActividadesModule)
+    loadChildren: () => import('./actividades/actividades.module').then(m => m.ActividadesModule)   
   },
   {
     path: 'mislogros',
     loadChildren: () => import('./mislogros/mislogros.module').then(m => m.MislogrosModule)
-  },
-  {
-    path: 'entregables',
-    loadChildren: () => import('./actividades/entregables/entregables.module').then(m => m.EntregablesModule)
-  },
+  },   
   {
     path: 'mitesis',
     loadChildren: () => import('./mitesis/mitesis.module').then(m => m.MitesisModule)

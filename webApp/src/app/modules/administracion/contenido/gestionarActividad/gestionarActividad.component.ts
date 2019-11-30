@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import {Actividad} from './interfaces/actividad.interface';
 import {GestionarActividadService} from '././servicios/gestionar-actividad.service';
 import { Escuela } from '././interfaces/escuela.interface';
@@ -10,6 +10,7 @@ import { AsesorService } from '././servicios/asesor.service';
 import { Alumno } from '././interfaces/alumno.interface';
 import { AlumnoService } from '././servicios/alumno.service';
 import { GuardarActividadService } from '././servicios/guardar-actividad.service';
+
 
 @Component({
   selector: 'app-gestionarActividad',
@@ -39,7 +40,7 @@ export class GestionarActividadComponent implements OnInit {
     private cicloAcademico: CicloAcademicoService,
     private asesorEscuela: AsesorService,
     private alumnoEscuela: AlumnoService,
-    private actividades: GuardarActividadService
+    private actividades: GuardarActividadService,    
     ) { }
   ngOnInit() {
     this.gestionarActividadService.obtenerTiposActividad().subscribe(
@@ -72,6 +73,10 @@ export class GestionarActividadComponent implements OnInit {
       }
     )
   }
+  agregarActividad(){
+    alert('aun no funciona');
+  }
+ 
   guardarActividad(){
     this.actividades.agregarActividad(
       this.AlumnoId,

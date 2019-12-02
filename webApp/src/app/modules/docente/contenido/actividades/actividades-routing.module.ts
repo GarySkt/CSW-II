@@ -8,7 +8,7 @@ const routes: Routes = [
     path: '', component: ActividadesComponent 
   },
   {
-    path:'entregables',
+    path:'entregables/:actividadId',
     component: EntregablesComponent    
   },
 

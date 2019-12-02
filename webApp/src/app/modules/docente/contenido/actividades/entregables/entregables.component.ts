@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Inject } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { AgregarEntregableComponent } from '../agregar-entregable/agregar-entregable.component';
 
 @Component({
   selector: 'app-entregables',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EntregablesComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
   }
-
+  agregarEntregable(){
+    this.dialog.open(AgregarEntregableComponent);
+  }
+ 
 }

@@ -1,0 +1,63 @@
+<h2 mat-dialog-title>Agregar Actividad</h2>
+<mat-dialog-content>
+    <form class="formulario" action="">
+        <mat-form-field>
+            <mat-select placeholder="Seleccione Tipo de Actividad" [(ngModel)]="ActividadTipoId" name="actividadTipoId"
+                required>
+                <mat-option *ngFor="let actividad of actividad" [value]="actividad.actividadTipoId">
+                    {{actividad.nombre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td>
+                    <mat-form-field>
+                        <mat-select placeholder="Escuelas" (selectionChange)="obtenerAsesores($event.value)"
+                            [(ngModel)]="escuelaId" name="escuelaId">
+                            <mat-option *ngFor="let escuela of escuela" [value]="escuela.escuelaId">
+                                {{escuela.acronimo}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-select placeholder="Ciclo Academico" [(ngModel)]="nombre" name="nombre">
+                            <mat-option *ngFor="let ciclo of cicloacademico" [value]="ciclo.nombre">
+                                {{ciclo.nombre}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+                <td>
+                    <mat-form-field>
+                        <mat-select placeholder="Alumno" [(ngModel)]="AlumnoId" name="AlumnoId">
+                            <mat-option *ngFor="let alumno of alumno" [value]="alumno.entidadID">
+                                {{alumno.personaNombre}} {{alumno.personaApellido}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </tr>
+        </table>
+        <mat-form-field>
+            <mat-select placeholder="Asesor" [(ngModel)]="AsesorId" name="AsesorId">
+                <mat-option *ngFor="let asesor of asesor" [value]="asesor.entidadID">
+                    {{asesor.personaNombre}}
+                    {{asesor.personaApellido}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Titulo" [(ngModel)]="Titulo" name="Titulo">
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput placeholder="Descripcion" [(ngModel)]="Descripcion" name="Descripcion"></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput placeholder="Resumen" [(ngModel)]="Resumen" name="Resumen"></textarea>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-flat-button color="primary" (click)="guardarActividad()">Guardar</button>
+    <button mat-flat-button color="primary" mat-dialog-close>Cancelar</button>
+</mat-dialog-actions>

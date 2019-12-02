@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ActividadesComponent } from './actividades.component';
+import { EntregablesComponent } from './entregables/entregables.component';
 
 const routes: Routes = [
   { 
@@ -8,7 +9,7 @@ const routes: Routes = [
   },
   {
     path:'entregables',
-    loadChildren:()=>import('./entregables/entregables.module').then(m=>m.EntregablesModule)
+    component: EntregablesComponent    
   },
 
 ];

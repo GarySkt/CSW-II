@@ -1,17 +1,18 @@
 <mat-toolbar>Actividades Asignadas</mat-toolbar>
-<router-outlet></router-outlet>
-<mat-card class="example-card" routerLink="entregables" *ngFor="let actividad of actividadesDocente">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{actividad.actividadTitulo}}</mat-card-title>
-      <mat-card-subtitle>{{actividad.actividadNombreTipo}}</mat-card-subtitle>
-    </mat-card-header>    
-    <mat-card-content>
-      <p>
-        {{actividad.actividadResumen}}
-      </p>
-    </mat-card-content>
-    <mat-card-actions>      
-    </mat-card-actions>
-  </mat-card>
+        <mat-card class="example-card" routerLink="entregables" *ngFor="let actividad of actividadesDocente">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{actividad.actividadTitulo}}</mat-card-title>
+              <mat-card-subtitle>{{actividad.actividadNombreTipo}}</mat-card-subtitle>
+            </mat-card-header>    
+            <mat-card-content>
+              <p>
+                {{actividad.actividadResumen}}
+              </p>
+            </mat-card-content>
+            <mat-card-actions>      
+            </mat-card-actions>
+          </mat-card>
+
+
   

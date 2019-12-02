@@ -1,0 +1,14 @@
+
+<h2 mat-dialog-title>Agregar Entregable</h2>
+<mat-dialog-content>
+    <mat-form-field>
+        <input matInput placeholder="Titulo" [(ngModel)]="Titulo" name="Titulo">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Comentario" [(ngModel)]="comentario" name="comentario">
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-flat-button color="primary" (click)="guardarEntregable()">Guardar</button>
+    <button mat-flat-button mat-dialog-close>Cancelar</button>
+</mat-dialog-actions>

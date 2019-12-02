@@ -2,13 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActividadesComponent } from './actividades.component';
 import { ActividadesRoutingModule } from './actividades-routing.module';
-import { MatToolbarModule, MatTabsModule,MatCardModule, MatGridListModule } from '@angular/material';
-
+import { MatToolbarModule, MatTabsModule,MatCardModule, MatGridListModule, MatButtonModule, MatIconModule, MatDialogModule, MatInputModule } from '@angular/material';
+import { FlexLayoutModule} from '@angular/flex-layout';
+import { EntregablesComponent } from './entregables/entregables.component';
+import { AgregarEntregableComponent } from './agregar-entregable/agregar-entregable.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     ActividadesComponent,
-    
+    EntregablesComponent,
+    AgregarEntregableComponent
+  ],
+  entryComponents: [
+    AgregarEntregableComponent
   ],
   imports: [
     CommonModule,
@@ -16,8 +23,13 @@ import { MatToolbarModule, MatTabsModule,MatCardModule, MatGridListModule } from
     MatToolbarModule,
     MatTabsModule,
     MatCardModule,
-    MatGridListModule
-    
+    MatGridListModule,
+    FlexLayoutModule,
+    MatButtonModule,
+    MatIconModule,
+    MatDialogModule,
+    MatInputModule,
+    FormsModule
   ]
 })
 export class ActividadesModule { }

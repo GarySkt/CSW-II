@@ -28,8 +28,8 @@ export class TablaActividadesComponent implements OnInit {
 
   ngOnInit() {      
   }
-  eliminarActividad(actividadId){
-    this.eliminarActividades.eliminarActividad(actividadId).subscribe(
+  eliminaractividad(actividadId){
+    this.eliminarActividades.eliminaractividad(actividadId).subscribe(
       actividadeliminada=>{
           this.actividad = actividadeliminada;
           alert('Actividad eliminada.');

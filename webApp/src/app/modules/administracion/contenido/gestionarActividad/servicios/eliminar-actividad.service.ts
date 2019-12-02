@@ -10,11 +10,10 @@ export class EliminarActividadService {
 
   constructor(private http: HttpClient) { }
 
-  url: "https://localhost:5001/api/Actividad/";
+  url= "https://localhost:5001/api/actividad/";
 
-  eliminarActividad(actividadId):Observable<Actividad[]>{
+  eliminaractividad(actividadId):Observable<Actividad[]>{
     return this.http.delete<Actividad[]>(this.url+actividadId);
-
   }
 
 }

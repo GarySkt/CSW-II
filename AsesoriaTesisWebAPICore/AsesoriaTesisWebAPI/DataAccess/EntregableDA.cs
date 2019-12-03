@@ -86,7 +86,7 @@ namespace AsesoriaTesisWebAPI.DataAccess
                     EstadoFecha = lastEstado.Value.First() != null ? lastEstado.Value.First().Fecha : Convert.ToDateTime("1500-05-05"),
                     ComentarioAlumno = lastEstado.Value.First() != null ? lastEstado.Value.First().ComentarioAlumno : "Sin comentarios",
                     ComentarioAsesor = lastEstado.Value.First() != null ? lastEstado.Value.First().ComentarioAsesor: "Sin comentarios",
-                    EntregableEstado = lastEstado.Value.First() != null ? lastEstado.Value.First().Estado : 3,
+                    EntregableEstado = (lastEstado.Value.First() != null) ? ((lastEstado.Value.First().Estado == 1) ? "Enviado" : ((lastEstado.Value.First().Estado == 2) ? "Corregir" : "Aprobado")):"Sin novedades",
                     MedallaId = lastMedal.Value.First() != null ? lastMedal.Value.First().MedallaId : 0,
                     MedallaNombre = lastMedal.Value.First() != null ? lastMedal.Value.First().MedallaNombre : "No se asignaron medallas",
                     MedallaImagenURL = lastMedal.Value.First() != null ? lastMedal.Value.First().MedallaImagenUrl : "No se asignaron medallas"

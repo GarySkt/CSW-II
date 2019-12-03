@@ -19,7 +19,7 @@ namespace AsesoriaTesisWebAPI.CustomModels
         public DateTime EstadoFecha { get; set; }
         public string ComentarioAlumno { get; set; }
         public string ComentarioAsesor { get; set; }
-        public int EntregableEstado { get; set; }
+        public string EntregableEstado { get; set; }
 
         public int EntregableMedallaId { get; set; }
         public int MedallaId { get; set; }

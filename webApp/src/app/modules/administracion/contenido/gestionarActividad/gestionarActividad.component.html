@@ -3,5 +3,5 @@
     <button mat-raised-button color="primary" (click)="agregarActividad()">
         <mat-icon>add_circle</mat-icon>Agregar
     </button>
-    <app-tabla-actividades></app-tabla-actividades>
+    <app-tabla-actividades [actividadesTabla]="actividades" #tablaactividades></app-tabla-actividades>
 </div>

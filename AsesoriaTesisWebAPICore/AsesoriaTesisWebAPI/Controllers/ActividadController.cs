@@ -35,7 +35,11 @@ namespace AsesoriaTesisWebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Actividad>> GetActividad(int id)
         {
-            var actividad = await _context.Actividad.FindAsync(id);
+            var actividad = await _context.Actividad
+                .Include(a => a.Alumno)
+                .Include(a => a.Asesor)
+                .Where(a => a.ActividadId.Equals(id))
+                .FirstOrDefaultAsync();
 
             if (actividad == null)
             {
@@ -82,7 +86,19 @@ namespace AsesoriaTesisWebAPI.Controllers
             _context.Actividad.Add(actividad);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetActividad", new { id = actividad.ActividadId }, actividad);
+            
+            var actividadGuardada = await _context.Actividad
+                .Include(a => a.Alumno)
+                .ThenInclude(al => al.AlumnoNavigation)
+                .ThenInclude(e => e.Persona)
+                .Include(a => a.Asesor)
+                .ThenInclude(ase => ase.AsesorNavigation)
+                .ThenInclude(dn => dn.DocenteNavigation)
+                .ThenInclude(d => d.Persona)
+                .Where(a => a.ActividadId.Equals(actividad.ActividadId))
+                .FirstOrDefaultAsync();
+
+            return CreatedAtAction("GetActividad", new { id = actividad.ActividadId }, actividadGuardada);
         }
 
         // DELETE: api/Actividad/5

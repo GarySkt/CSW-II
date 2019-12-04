@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Docente } from './docente.interface';
-import { EspecialidadesService } from './especialidades.service';
+import { Docente } from './interfaces/docente.interface';
+import { DocenteLineaInvestigacionService } from './servicios/obtener-docentes-linea-investigacion.service';
 
 @Component({
   selector: 'app-especialidades',
@@ -11,7 +11,7 @@ export class EspecialidadesComponent implements OnInit {
 
   docentes: Docente[] = new Array<Docente>();
 
-  constructor( private especialidadesService: EspecialidadesService ) { 
+  constructor( private especialidadesService: DocenteLineaInvestigacionService ) { 
   }
 
   ngOnInit() {

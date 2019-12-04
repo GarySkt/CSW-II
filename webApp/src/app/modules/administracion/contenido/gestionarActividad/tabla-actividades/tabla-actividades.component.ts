@@ -1,12 +1,5 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
-import { datosActividadTabla } from '../interfaces/datosActividadTabla.interface';
-import { ObtenerListaActividadesService } from '../servicios/obtener-lista-actividades.service';
-import { DataSource } from '@angular/cdk/table';
-import { Observable } from 'rxjs';
-import { EliminarActividadService } from '../servicios/eliminar-actividad.service';
-import { Actividad } from '../interfaces/actividad.interface';
-import { MatDialog } from '@angular/material';
-import { AgregarActividadComponent } from '../agregar-actividad/agregar-actividad.component';
+import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-tabla-actividades',
@@ -14,45 +7,28 @@ import { AgregarActividadComponent } from '../agregar-actividad/agregar-activida
   styleUrls: ['./tabla-actividades.component.scss']
 })
 export class TablaActividadesComponent implements OnInit {
+
   displayedColumns: string[] = ['actividad', 'alumno', 'asesor','titulo', 'descripcion','estado','acciones'];  
-  dataSource = new DatosTablaActividad(this.obtenerListaActividades);
 
-  actividad: Actividad[] = new Array<Actividad>();
+  @Input() actividadesTabla: any[];
 
-  actividades: datosActividadTabla[] = new Array<datosActividadTabla>();  
-  actividadId: number;
-  
+  dataSource: any;
+
   constructor( 
-    private obtenerListaActividades: ObtenerListaActividadesService,    
-    private eliminarActividades: EliminarActividadService,
-    public dialog: MatDialog
+    private changeDetectorRefs: ChangeDetectorRef
     ) { }
 
   ngOnInit() {      
-    let dialogRef = this.dialog.open(AgregarActividadComponent);
+    this.dataSource = new MatTableDataSource(this.actividadesTabla)
+  }
 
-    dialogRef.afterClosed().subscribe(respuestaActividad=>{
-      this.actividades.push(respuestaActividad);
-    })
+  public Log(){
+    console.log(this.actividadesTabla);
   }
-  eliminaractividad(actividadId){
-    this.eliminarActividades.eliminaractividad(actividadId).subscribe(
-      actividadeliminada=>{
-          this.actividad = actividadeliminada;
-          alert('Actividad eliminada.');
-      })    
+
+  public ActualizarActividaadesTabla(nuevasActividades: any[]){
+    this.actividadesTabla = nuevasActividades;
+    this.dataSource.data = this.actividadesTabla;
+    this.changeDetectorRefs.detectChanges();
   }
-  editarActividad(actividadId){
-    alert('Editar' + actividadId);
-  }
-  
 }
-
-export class DatosTablaActividad extends DataSource<any>{
-  constructor(private obtenerListaActividades: ObtenerListaActividadesService) { 
-    super();
-  }connect():Observable<datosActividadTabla[]>{
-    return this.obtenerListaActividades.obtenerDatosTablaActividades(); 
-  }
-  disconnect(){}
-  }

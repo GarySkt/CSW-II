@@ -2,36 +2,31 @@ mat-toolbar{
     background-color: #0E1D56;
     color: white;
 }
-.entregable{    
-    width: 70%;
-    margin-top: 0.85%;
-    margin-bottom: 0.85%;
+
+mat-tab{    
+    height: 100%;
 }
-.item{
- display: inline-block; 
+.tab-contenido{
+    height: 100%;
 }
-.document-icon{
-    width: 70px;
+img{
+    display: block;
+    margin: auto;
     height: 70px;
+    width: 100px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-.section-content{
-    padding-left: 200px;
-    
+  .example-card {
+   width: 100%;
+    margin: 15px;
+    cursor: pointer;
 }
-.section-actions{
-    padding-left: 200px;
-}
-.check-icon{
-    width: 40px;
-    height: 40px;
-}
-.save-icon{
-    width: 50px;
-    height: 50px;
-}
-.centrar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+
+  
+  .example-header-image {
+    background-image: url('../../../../../assets/mitesis/document.svg');
+    background-size: cover;
   }
+  
+  

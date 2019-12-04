@@ -40,7 +40,7 @@ export class AgregarActividadComponent implements OnInit {
   AsesorId: number;
   ActividadTipoId: number;
   escuelaId: number;
-  nombre: undefined;
+  nombre: any;
 
   ngOnInit() {
     this.gestionarActividadService.obtenerTiposActividad().subscribe(

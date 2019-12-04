@@ -17,7 +17,7 @@ export class ActividadesComponent implements OnInit {
 entidadId: number;
   ngOnInit() {
     this.entidadId= this.shared.entidadId;
-    //alert(this.entidadId);
+    
     this.obtenerActividadDocente.obtenerActividadesDocente(this.entidadId).subscribe(
       activiadadesDocente=>{
         this.actividadesDocente = activiadadesDocente;

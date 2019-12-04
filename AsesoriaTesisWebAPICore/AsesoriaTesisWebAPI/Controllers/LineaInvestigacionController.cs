@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using AsesoriaTesisWebAPI.Models;
+using AsesoriaTesisWebAPI.DataAccess;
+using AsesoriaTesisWebAPI.CustomModels;
 
 namespace AsesoriaTesisWebAPI.Controllers
 {
@@ -14,10 +16,12 @@ namespace AsesoriaTesisWebAPI.Controllers
     public class LineaInvestigacionController : ControllerBase
     {
         private readonly TutoriaContext _context;
+        private LineaInvestigacionDA lineaInvestigacionDA;
 
         public LineaInvestigacionController(TutoriaContext context)
         {
             _context = context;
+            lineaInvestigacionDA = new LineaInvestigacionDA();
         }
 
         // GET: api/LineaInvestigacion
@@ -100,6 +104,27 @@ namespace AsesoriaTesisWebAPI.Controllers
         private bool LineaInvestigacionExists(int id)
         {
             return _context.LineaInvestigacion.Any(e => e.LineaInvestigacionId == id);
+        }
+
+        /////// METODOS AGREGADOS ///////
+
+        /// <summary>
+        /// GET: api/LineaInvestigacion/GetDocenteLineaInvestigacion/idAreaInvestigacion
+        /// </summary>
+        /// <param name="idAreaInvestigacion"></param>
+        /// <returns></returns>
+        [HttpGet]
+        [Route("[action]/{idAreaInvestigacion}")]
+        public async Task<ActionResult<IEnumerable<LineaAreaInvestigacion>>> GetLineaInvestigacionArea(int idAreaInvestigacion)
+        {
+            var lineaInvestigacion = await lineaInvestigacionDA.GetLineaInvestigacionArea(idAreaInvestigacion);
+
+            if (lineaInvestigacion == null)
+            {
+                return NotFound();
+            }
+
+            return lineaInvestigacion;
         }
     }
 }

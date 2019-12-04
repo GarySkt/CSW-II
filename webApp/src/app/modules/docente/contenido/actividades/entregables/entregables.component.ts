@@ -13,7 +13,7 @@ import { ObtenerEntregablesActividadService } from '../servicios/obtener-entrega
 export class EntregablesComponent implements OnInit {
   actividadId: number;
 
-  entregable: Entregable[] = new Array<Entregable>();
+  entregables: Entregable[] = new Array<Entregable>();
   mostrarProgressBar: boolean = false;    
   constructor(
     public dialog: MatDialog,
@@ -27,7 +27,7 @@ export class EntregablesComponent implements OnInit {
     this.mostrarProgressBar = true;     
     this.entrgableServicio.obtenerEntregablesActividad(this.actividadId).subscribe(
       entregableActividad => {
-        this.entregable = entregableActividad;        
+        this.entregables = entregableActividad;        
         this.mostrarProgressBar = false;
       },err => {
         alert("Error al obtener los entregables");        
@@ -36,7 +36,17 @@ export class EntregablesComponent implements OnInit {
     )    
   }
   agregarEntregable(){
-    this.dialog.open(AgregarEntregableComponent);
+    let dialogRef = this.dialog.open(AgregarEntregableComponent, {
+      data: {
+        actividadId: this.actividadId        
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(respuestaEntregable => {
+      console.log(respuestaEntregable);
+      this.entregables.push(respuestaEntregable);
+    });
+    
   }
   
 }

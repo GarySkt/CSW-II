@@ -19,8 +19,11 @@ img{
     padding-bottom: 20px;
 }
   .example-card {
-    max-width: 400px;
-  }
+   width: 100%;
+    margin: 15px;
+    cursor: pointer;
+}
+
   
   .example-header-image {
     background-image: url('../../../../../assets/mitesis/document.svg');

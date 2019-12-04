@@ -10,8 +10,8 @@ import {SharedserviceService} from '../../sharedservice.service';
 })
 export class AutenticacionComponent implements OnInit {
 
-  username: string;
-  password: string;
+  username: string = "Alberto";
+  password: string =  "123456";
   mostrarProgressBar: boolean = false;    
 
   constructor(

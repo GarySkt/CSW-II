@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { GuardarActividadService } from '../servicios/guardar-actividad.service';
 import { Actividad } from '../interfaces/actividad.interface';
 import { Escuela } from '../interfaces/escuela.interface';
@@ -10,6 +10,7 @@ import { EscuelaService } from '../servicios/escuela.service';
 import { CicloAcademicoService } from '../servicios/ciclo-academico.service';
 import { AsesorService } from '../servicios/asesor.service';
 import { AlumnoService } from '../servicios/alumno.service';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-agregar-actividad',
@@ -29,6 +30,8 @@ export class AgregarActividadComponent implements OnInit {
     private asesorEscuela: AsesorService,
     private alumnoEscuela: AlumnoService,
     private actividades: GuardarActividadService,    
+    public dialogRef: MatDialogRef<AgregarActividadComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
   AlumnoId: number;
   Titulo: string;
@@ -81,9 +84,8 @@ export class AgregarActividadComponent implements OnInit {
       this.AsesorId,
       this.ActividadTipoId
     ).subscribe(
-      respuestaActividad=>{
-        alert('Actividad Guardada con exito.');     
-
+      respuestaActividad=>{        
+        this.dialogRef.close(respuestaActividad);
       },err=>{
         alert('Hubo un error al guardar la actividad.')
       },()=>{

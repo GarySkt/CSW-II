@@ -5,6 +5,8 @@ import { DataSource } from '@angular/cdk/table';
 import { Observable } from 'rxjs';
 import { EliminarActividadService } from '../servicios/eliminar-actividad.service';
 import { Actividad } from '../interfaces/actividad.interface';
+import { MatDialog } from '@angular/material';
+import { AgregarActividadComponent } from '../agregar-actividad/agregar-actividad.component';
 
 @Component({
   selector: 'app-tabla-actividades',
@@ -21,12 +23,17 @@ export class TablaActividadesComponent implements OnInit {
   actividadId: number;
   
   constructor( 
-    private obtenerListaActividades: ObtenerListaActividadesService,
-    private changeDetectorRefs: ChangeDetectorRef,
-    private eliminarActividades: EliminarActividadService
+    private obtenerListaActividades: ObtenerListaActividadesService,    
+    private eliminarActividades: EliminarActividadService,
+    public dialog: MatDialog
     ) { }
 
   ngOnInit() {      
+    let dialogRef = this.dialog.open(AgregarActividadComponent);
+
+    dialogRef.afterClosed().subscribe(respuestaActividad=>{
+      this.actividades.push(respuestaActividad);
+    })
   }
   eliminaractividad(actividadId){
     this.eliminarActividades.eliminaractividad(actividadId).subscribe(

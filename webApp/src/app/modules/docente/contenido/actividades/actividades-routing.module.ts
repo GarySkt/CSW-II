@@ -8,6 +8,10 @@ const routes: Routes = [
     path: '', component: ActividadesComponent 
   },
   {
+    path:':actividadId/entregables',
+    component: EntregablesComponent    
+  },
+  {
     path:'entregables/:actividadId',
     component: EntregablesComponent    
   },
